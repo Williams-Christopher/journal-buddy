@@ -17,10 +17,31 @@ class Navigation extends React.Component {
                             About
                         </Link>
                     </li>
-                    <li className='generic_link top_nav_item'>Create Entry</li>
-                    <li className='generic_link top_nav_item'>List</li>
-                    <li className='generic_link top_nav_item'>Reports</li>
-                    <li className='generic_link top_nav_item'>Login/out</li>
+                    <li className='generic_link top_nav_item'>
+                        <Link className='generic_link top_nav_link' to='/Create'>
+                            Create Entry
+                        </Link>
+                    </li>
+                    <li className='generic_link top_nav_item'>
+                        <Link className='generic_link top_nav_link' to='/List'>
+                            List
+                        </Link>
+                    </li>
+                    <li className='generic_link top_nav_item'>
+                        <Link className='generic_link top_nav_link' to='/Reports'>
+                            Reports
+                        </Link>
+                    </li>
+                    <li className='generic_link top_nav_item'>
+                        <Link className='generic_link top_nav_link' to='/Login'>
+                            Login
+                        </Link>
+                    </li>
+                    <li className='generic_link top_nav_item'>
+                        <Link className='generic_link top_nav_link' to='/Logout'>
+                            Logout
+                        </Link>
+                    </li>
                 </ul>
             </nav>
         );
