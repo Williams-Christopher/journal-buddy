@@ -9,3 +9,23 @@ body {
   -moz-osx-font-smoothing: grayscale;
   line-height: 1.5;
 }
+
+/*
+  Generic link rules for this application
+*/
+
+.generic_link {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.generic_link:link,
+.generic_link:visited,
+.generic_link:hover,
+.generic_link:active {
+  color: black;
+}
+
+.generic_link:hover {
+  color: lightblue;
+}

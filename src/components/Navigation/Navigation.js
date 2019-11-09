@@ -6,13 +6,21 @@ class Navigation extends React.Component {
     render() {
         return (
             <nav className='top_nav'>
-                <h1 className='top_nav_title'>Journal Buddy</h1>
+                <h1 className='top_nav_title'>
+                    <Link className='generic_link top_nav_link' to='/'>
+                        Journal Buddy
+                    </Link>
+                </h1>
                 <ul className='top_nav_links'>
-                    <li className='top_nav_link'>About</li>
-                    <li className='top_nav_link'>Create Entry</li>
-                    <li className='top_nav_link'>List</li>
-                    <li className='top_nav_link'>Reports</li>
-                    <li className='top_nav_link'>Login/out</li>
+                    <li className='top_nav_item'>
+                        <Link className='generic_link top_nav_link' to='/'>
+                            About
+                        </Link>
+                    </li>
+                    <li className='generic_link top_nav_item'>Create Entry</li>
+                    <li className='generic_link top_nav_item'>List</li>
+                    <li className='generic_link top_nav_item'>Reports</li>
+                    <li className='generic_link top_nav_item'>Login/out</li>
                 </ul>
             </nav>
         );

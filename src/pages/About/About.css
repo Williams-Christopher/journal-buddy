@@ -1,0 +1,21 @@
+.about_explainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.about_heading {
+
+}
+
+.about_explainer_text {
+
+}
+
+.about_image {
+
+}
+
+/* Media query at 700px to set flex-direction: row; ? */
