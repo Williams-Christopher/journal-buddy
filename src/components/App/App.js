@@ -1,10 +1,17 @@
 import React from 'react';
-import './App.css';
+import Navigation from '../Navigation/Navigation';
 
-function App() {
-  return (
-    <h1>Placeholder text</h1>
-  );
-}
+// import './App.css';
+
+class App extends React.Component {
+  render() {
+    return (
+      <>
+        <Navigation />
+        <h1>Placeholder body text</h1>
+      </>
+    );
+  };
+};
 
 export default App;

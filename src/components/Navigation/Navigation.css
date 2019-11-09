@@ -1,0 +1,9 @@
+nav {
+    padding: 1% 0;
+    background-color: #aaa;
+}
+
+nav > ul {
+    list-style: none;
+    padding: 0;
+}
