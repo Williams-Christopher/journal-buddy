@@ -1,0 +1,8 @@
+.journal_entry_filter {
+    display: flex;
+    flex-direction: column;
+}
+
+.journal_entry_filter fieldset {
+    border: none;
+}
