@@ -10,7 +10,7 @@ class JournalListItem extends React.Component {
         return (
             <section className='journal_list_item'>
                 <h2>
-                    <Link className='generic_link' to={pathString}>
+                    <Link className='common_link' to={pathString}>
                         {this.props.entry_title || 'Untitled Entry'}
                     </Link>
                 </h2>

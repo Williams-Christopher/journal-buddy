@@ -14,19 +14,19 @@ body {
   Generic link rules for this application
 */
 
-.generic_link {
+.common_link {
   text-decoration: none;
   cursor: pointer;
 }
 
-.generic_link:link,
-.generic_link:visited,
-.generic_link:hover,
-.generic_link:active {
+.common_link:link,
+.common_link:visited,
+.common_link:hover,
+.common_link:active {
   color: black;
 }
 
-.generic_link:hover {
+.common_link:hover {
   color: lightblue;
 }
 

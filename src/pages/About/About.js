@@ -38,7 +38,7 @@ class About extends React.Component {
                         elit duis tristique sollicitudin nibh.
                     </article>
                     <img className='about_image' src="https://picsum.photos/300/300" alt="Journal Buddy Usage Screenshot" />
-                    <Link className='generic_link' to='Register'>Sign up!</Link>
+                    <Link className='common_link' to='Register'>Sign up!</Link>
                 </section>
             </>
         );
