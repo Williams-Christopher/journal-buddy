@@ -1,13 +1,19 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import './JournalListItem.css';
 
 class JournalListItem extends React.Component {
     render() {
-        console.log(this.props)
+        const pathString = `/Entry/${this.props.entry_id}`;
+
         return (
-            <section class="journal_list_item">
-                <h2>{this.props.entry_title || 'Untitled Entry'}</h2>
+            <section className='journal_list_item'>
+                <h2>
+                    <Link className='generic_link' to={pathString}>
+                        {this.props.entry_title || 'Untitled Entry'}
+                    </Link>
+                </h2>
                 <h3>{this.props.entry_date}</h3>
                 <p>Feeling: {this.props.entry_feeling}</p>
                 <p>Privacy: {this.props.entry_privacy === 0 ? 'Private' : 'Public'}</p>
