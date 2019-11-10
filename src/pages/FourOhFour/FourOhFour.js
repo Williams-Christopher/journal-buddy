@@ -1,9 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import './FourOhFourPage.css';
+import './FourOhFour.css';
 
-class FourOhFourPage extends React.Component {
+class FourOhFour extends React.Component {
     render() {
         return (
             <>
@@ -14,4 +14,4 @@ class FourOhFourPage extends React.Component {
     };
 };
 
-export default FourOhFourPage;
+export default FourOhFour;

@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter, Router } from 'react-router-dom';
 
-import About from './About';
+import FourOhFour from './FourOhFour';
 
 const history = {
     createHref: jest.fn(),
@@ -17,7 +17,7 @@ it('renders without crashing', () => {
   ReactDOM.render(
     <BrowserRouter>
         <Router history={history}>
-            <About />
+            <FourOhFour />
         </Router>
     </BrowserRouter>, div);
   ReactDOM.unmountComponentAtNode(div);
