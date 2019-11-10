@@ -29,3 +29,46 @@ body {
 .generic_link:hover {
   color: lightblue;
 }
+
+/*
+  Generic form rules for this application
+*/
+
+.common_form {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: baseline;
+  width: 90%;
+}
+
+.common_form label {
+  width: 100%;
+}
+
+.common_form input,
+.common_form select,
+.common_form textarea {
+  width: 100%;
+}
+
+.common_form label,
+.common_form input,
+.common_form select,
+.common_form textarea {
+  margin: 15px 5;
+}
+
+.common_form textarea {
+  vertical-align: middle;
+}
+
+.common_button {
+  display: block;
+  margin: 20px auto;
+  height: 30px;
+  min-width: 100px;
+  background-color: darkgrey;
+}
