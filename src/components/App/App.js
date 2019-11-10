@@ -15,7 +15,7 @@ class App extends React.Component {
         <Navigation />
           <Switch>
             <Route exact path='/' component={About} />
-            <Route path='/List' component={JournalEntryList} />
+            <Route path='/List' render={componentProps => <JournalEntryList entries={this.props.entries} />} />
             <Route component={FourOhFour} />
           </Switch>
         <h1>Placeholder body text</h1>
