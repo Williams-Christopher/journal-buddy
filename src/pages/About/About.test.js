@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter, Router } from 'react-router-dom';
 
+import TestHelpers from '../../helpers/TestHelpers';
 import About from './About';
 
 const history = {
@@ -16,7 +17,7 @@ it('renders without crashing', () => {
   const div = document.createElement('div');
   ReactDOM.render(
     <BrowserRouter>
-        <Router history={history}>
+        <Router history={TestHelpers.dummyHistory}>
             <About />
         </Router>
     </BrowserRouter>, div);

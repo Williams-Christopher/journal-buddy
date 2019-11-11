@@ -5,6 +5,14 @@ const TestHelpers = {
         },
     },
 
+    dummyHistory: {
+        createHref: jest.fn(),
+        listen: jest.fn(),
+        location: {
+            pathname: '/',
+        },
+    },
+
     entries: [
         {
             entry_id: 1,
