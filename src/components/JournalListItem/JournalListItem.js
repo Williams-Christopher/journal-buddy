@@ -5,7 +5,7 @@ import './JournalListItem.css';
 
 class JournalListItem extends React.Component {
     render() {
-        const pathString = `/Entry/${this.props.entry_id}`;
+        const pathString = `/View/${this.props.entry_id}`;
 
         return (
             <section className='journal_list_item'>

@@ -1,0 +1,17 @@
+/*
+    Rules for Journal Entry View page
+*/
+
+.view_entry {
+    line-height: 2.5rem;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.view_entry > h2 {
+    margin: 0;
+}
+
+.view_entry_body {
+    text-align: left;
+}
