@@ -9,8 +9,8 @@ import CreateEntry from '../../pages/CreateEntry/CreateEntry';
 import ViewEntry from '../../pages/ViewEntry/ViewEntry';
 import Register from '../../pages/Register/Register';
 import Login from '../../pages/Login/Login';
+import Reports from '../../pages/Reports/Reports';
 import FourOhFour from '../../pages/FourOhFour/FourOhFour';
-
 
 // import './App.css';
 
@@ -26,6 +26,7 @@ class App extends React.Component {
             <Route path='/View/:entry_id' render={({ match }, componentProps) => <ViewEntry match={match} entries={this.props.entries} />} />
             <Route path='/Register' component={Register} />
             <Route path='/Login' component={Login} />
+            <Route path='/Reports' component={Reports} />
             <Route component={FourOhFour} />
           </Switch>
         <Footer />
