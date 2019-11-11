@@ -20,7 +20,7 @@ class Register extends React.Component {
                     <input type='password' name='login_password_verify' id='login_password_verify' />
                 </form>
                 <button className='common_button'>Signup</button>
-                Already have an account? <Link to='/Login'>Login</Link>
+                Already have an account? <Link className='common_link' to='/Login'>Login</Link>
             </section>
         );
     };
