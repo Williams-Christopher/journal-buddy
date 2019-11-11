@@ -7,7 +7,7 @@ class Footer extends React.Component {
         return (
             <footer>
                 <p>Created in Austin, TX by Christopher Williams</p>
-                <p>Have a question or need help? <a href='mailto:JournalBuddy@chriswillia.ms'>Send us an email</a>!</p>
+                <p>Have a question or need help? <a className='common_link' href='mailto:JournalBuddy@chriswillia.ms'>Send us an email</a>!</p>
             </footer>
         );
     };

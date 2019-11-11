@@ -8,7 +8,7 @@ class FourOhFour extends React.Component {
         return (
             <>
                 <h1>404 - The requested page does not exist</h1>
-                <p>Time to try another page or <Link to={'/'}>head home</Link></p>
+                <p>Time to try another page or <Link className='common_link' to={'/'}>head home</Link>.</p>
             </>
         );
     };
