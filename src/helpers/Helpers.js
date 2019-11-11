@@ -1,9 +1,21 @@
-function getFormattedEntryTitle(title, date) {
+function getLongFormattedEntryTitle(title, date) {
     let newTitle = title || 'Untitled Entry';
     let newDate = new Date(date);
     let properDate = newDate.toDateString();
     
     return `${newTitle} on ${properDate}`
+};
+
+function getShortFormattedEntryTitle(title) {
+    return title || 'Untitled Entry'
+};
+
+function getStringForUTCDate(date) {
+    if(!date) {
+        return `Improper date`
+    }
+
+    return new Date(date).toDateString();
 };
 
 function getStringForFeelingValue(feeling) {
@@ -38,7 +50,9 @@ function getStringForPrivacyValue(privacy) {
 }
 
 export {
-    getFormattedEntryTitle,
+    getLongFormattedEntryTitle,
+    getShortFormattedEntryTitle,
+    getStringForUTCDate,
     getStringForFeelingValue,
     getStringForPrivacyValue,
 };

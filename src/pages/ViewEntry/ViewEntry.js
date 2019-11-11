@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { getFormattedEntryTitle, getStringForFeelingValue, getStringForPrivacyValue } from '../../helpers/Helpers';
+import { getLongFormattedEntryTitle, getStringForFeelingValue, getStringForPrivacyValue } from '../../helpers/Helpers';
 import './ViewEntry.css';
 
 class ViewEntry extends React.Component {
@@ -17,7 +17,7 @@ class ViewEntry extends React.Component {
                 <button className='common_button'>Copy permalink</button>
                 <button className='common_button'>Back to list</button>
                 <p className='view_entry_date'>
-                    { getFormattedEntryTitle(entry.entry_title, entry.entry_date) }
+                    { getLongFormattedEntryTitle(entry.entry_title, entry.entry_date) }
                 </p>
                 <p className='view_entry_feeling'>
                     I was feeling: { getStringForFeelingValue(entry.entry_feeling) } - Privacy: { getStringForPrivacyValue(entry.entry_privacy) }
