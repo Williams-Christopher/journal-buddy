@@ -1,0 +1,18 @@
+footer {
+    background: grey;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+footer > p {
+    display: inline;
+    margin: 0 5px;
+}
+
+@media screen and (min-width: 400px) {
+    footer p {
+        font-size: 1rem;
+    }
+}

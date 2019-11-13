@@ -11,7 +11,7 @@ class Navigation extends React.Component {
                         Journal Buddy
                     </Link>
                 </h1>
-                <ul className='top_nav_links'>
+                <ul className='common_link top_nav_links'>
                     <li className='top_nav_item'>
                         <Link className='common_link top_nav_link' to='/'>
                             About

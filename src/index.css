@@ -4,11 +4,30 @@
 
 body {
   margin: 0;
+  /* min-height: 100vh;
+  position: relative; */
   font-family: "Open Sans", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   line-height: 1.5;
 }
+
+main {
+  width: 80%;
+  margin: 0 auto 50px auto;
+}
+
+#root {
+  position: relative;
+  min-height: 100vh;
+}
+
+section {
+  border: 1px solid black;
+  margin: 0 auto;
+  max-width: 800px;
+}
+
 
 /*
   Generic link rules for this application
@@ -17,13 +36,14 @@ body {
 .common_link {
   text-decoration: none;
   cursor: pointer;
+  color: #333;
 }
 
 .common_link:link,
 .common_link:visited,
 .common_link:hover,
 .common_link:active {
-  color: black;
+  color: #555;
 }
 
 .common_link:hover {
@@ -71,4 +91,10 @@ body {
   height: 30px;
   min-width: 100px;
   background-color: darkgrey;
+}
+
+@media screen and (min-width: 500px) {
+  main {
+    font-size: 1.25rem;
+  }
 }

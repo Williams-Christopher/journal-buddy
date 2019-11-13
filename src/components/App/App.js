@@ -19,6 +19,7 @@ class App extends React.Component {
     return (
       <>
         <Navigation />
+        <main>
           <Switch>
             <Route exact path='/' component={About} />
             <Route path='/List' render={componentProps => <JournalEntryList entries={this.props.entries} />} />
@@ -29,6 +30,7 @@ class App extends React.Component {
             <Route path='/Reports' component={Reports} />
             <Route component={FourOhFour} />
           </Switch>
+        </main>
         <Footer />
       </>
     );
