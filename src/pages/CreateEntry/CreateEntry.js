@@ -14,7 +14,7 @@ class CreateEntry extends React.Component {
                     <select name='entry_emotion_option' id='entry_form_emotion_option'>
                         <option value='5'>5 - Very happy</option>
                         <option value='4'>4 - Happy</option>
-                        <option value='3' defaultValue>3 - Normal / Even</option>
+                        <option value='3'>3 - Normal / Even</option>
                         <option value='2'>2 - Down</option>
                         <option value='1'>1 - Very down</option>
                     </select>
@@ -28,7 +28,7 @@ class CreateEntry extends React.Component {
 
                     <label htmlFor='entry_form_privacy'>Privacy:</label>
                     <select name='entry_form_privacy' id='entry_form_privacy'>
-                        <option value='0' defaultValue>Private</option>
+                        <option value='0'>Private</option>
                         <option value='1'>Public</option>
                     </select>
 
