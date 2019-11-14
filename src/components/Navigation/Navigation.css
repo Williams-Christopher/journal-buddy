@@ -3,6 +3,7 @@
     background-color: #aaa;
     display: flex;
     flex-direction: column;
+    justify-content: space-around;
 }
 
 .top_nav_title {
@@ -18,8 +19,18 @@
     flex-direction: column;
 }
 
+.top_nav_item {
+    display: inline-block;
+}
+
 @media screen and (min-width: 500px) {
     .top_nav_links {
+        flex-direction: row;
+        align-items: flex-start;
         font-size: 1.5rem;
+    }
+
+    .top_nav_item {
+        margin: 0 20px;
     }
 }

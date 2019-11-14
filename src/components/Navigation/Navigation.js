@@ -11,33 +11,33 @@ class Navigation extends React.Component {
                         Journal Buddy
                     </Link>
                 </h1>
-                <ul className='common_link top_nav_links'>
+                <ul className='top_nav_links'>
                     <li className='top_nav_item'>
                         <Link className='common_link top_nav_link' to='/'>
                             About
                         </Link>
                     </li>
-                    <li className='common_link top_nav_item'>
+                    <li className='top_nav_item'>
                         <Link className='common_link top_nav_link' to='/Create'>
                             Create Entry
                         </Link>
                     </li>
-                    <li className='common_link top_nav_item'>
+                    <li className='top_nav_item'>
                         <Link className='common_link top_nav_link' to='/List'>
                             List
                         </Link>
                     </li>
-                    <li className='common_link top_nav_item'>
+                    <li className='top_nav_item'>
                         <Link className='common_link top_nav_link' to='/Reports'>
                             Reports
                         </Link>
                     </li>
-                    <li className='common_link top_nav_item'>
+                    <li className='top_nav_item'>
                         <Link className='common_link top_nav_link' to='/Login'>
                             Login
                         </Link>
                     </li>
-                    <li className='common_link top_nav_item'>
+                    <li className='top_nav_item'>
                         <Link className='common_link top_nav_link' to='/Logout'>
                             Logout
                         </Link>
