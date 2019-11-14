@@ -4,8 +4,6 @@
 
 body {
   margin: 0;
-  /* min-height: 100vh;
-  position: relative; */
   font-family: "Open Sans", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -15,19 +13,20 @@ body {
 main {
   width: 80%;
   margin: 0 auto 50px auto;
+
 }
 
 #root {
-  position: relative;
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 section {
-  border: 1px solid black;
   margin: 0 auto;
   max-width: 800px;
 }
-
 
 /*
   Generic link rules for this application
@@ -95,6 +94,6 @@ section {
 
 @media screen and (min-width: 500px) {
   main {
-    font-size: 1.25rem;
+    font-size: 1.5rem;
   }
 }
