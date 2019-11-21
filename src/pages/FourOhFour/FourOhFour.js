@@ -1,17 +1,17 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import './FourOhFourPage.css';
+import './FourOhFour.css';
 
-class FourOhFourPage extends React.Component {
+class FourOhFour extends React.Component {
     render() {
         return (
             <>
                 <h1>404 - The requested page does not exist</h1>
-                <p>Time to try another page or <Link to={'/'}>head home</Link></p>
+                <p>Time to try another page or <Link className='common_link' to={'/'}>head home</Link>.</p>
             </>
         );
     };
 };
 
-export default FourOhFourPage;
+export default FourOhFour;

@@ -9,3 +9,91 @@ body {
   -moz-osx-font-smoothing: grayscale;
   line-height: 1.5;
 }
+
+main {
+  width: 80%;
+  margin: 0 auto 50px auto;
+
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+section {
+  margin: 0 auto;
+  max-width: 800px;
+}
+
+/*
+  Generic link rules for this application
+*/
+
+.common_link {
+  text-decoration: none;
+  cursor: pointer;
+  color: #333;
+}
+
+.common_link:link,
+.common_link:visited,
+.common_link:hover,
+.common_link:active {
+  color: #555;
+}
+
+.common_link:hover {
+  color: lightblue;
+}
+
+/*
+  Generic form rules for this application
+*/
+
+.common_form {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: baseline;
+  width: 90%;
+}
+
+.common_form label {
+  width: 100%;
+}
+
+.common_form input,
+.common_form select,
+.common_form textarea {
+  width: 100%;
+}
+
+.common_form label,
+.common_form input,
+.common_form select,
+.common_form textarea {
+  margin: 15px 5;
+}
+
+.common_form textarea {
+  vertical-align: middle;
+}
+
+.common_button {
+  display: block;
+  margin: 20px auto;
+  height: 30px;
+  min-width: 100px;
+  background-color: darkgrey;
+}
+
+@media screen and (min-width: 500px) {
+  main {
+    font-size: 1.5rem;
+  }
+}

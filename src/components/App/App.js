@@ -2,8 +2,15 @@ import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 
 import Navigation from '../Navigation/Navigation';
+import Footer from '../Footer/Footer';
 import About from '../../pages/About/About';
-import FourOhFourPage from '../../pages/FourOhFourPage/FourOhFourPage';
+import JournalEntryList from '../../pages/JournalEntryList/JournalEntryList';
+import CreateEntry from '../../pages/CreateEntry/CreateEntry';
+import ViewEntry from '../../pages/ViewEntry/ViewEntry';
+import Register from '../../pages/Register/Register';
+import Login from '../../pages/Login/Login';
+import Reports from '../../pages/Reports/Reports';
+import FourOhFour from '../../pages/FourOhFour/FourOhFour';
 
 // import './App.css';
 
@@ -12,11 +19,19 @@ class App extends React.Component {
     return (
       <>
         <Navigation />
+        <main>
           <Switch>
             <Route exact path='/' component={About} />
-            <Route component={FourOhFourPage} />
+            <Route path='/List' render={componentProps => <JournalEntryList entries={this.props.entries} />} />
+            <Route path='/Create' component={CreateEntry} />
+            <Route path='/View/:entry_id' render={({ match }, componentProps) => <ViewEntry match={match} entries={this.props.entries} />} />
+            <Route path='/Register' component={Register} />
+            <Route path='/Login' component={Login} />
+            <Route path='/Reports' component={Reports} />
+            <Route component={FourOhFour} />
           </Switch>
-        <h1>Placeholder body text</h1>
+        </main>
+        <Footer />
       </>
     );
   };

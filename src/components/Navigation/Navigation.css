@@ -3,16 +3,34 @@
     background-color: #aaa;
     display: flex;
     flex-direction: column;
+    justify-content: space-around;
 }
 
 .top_nav_title {
     margin: 0;
 }
 
+/* See index.css for generic link rules */
 .top_nav_links {
     list-style: none;
     margin: 0;
     padding: 0;
     display: flex;
     flex-direction: column;
+}
+
+.top_nav_item {
+    display: inline-block;
+}
+
+@media screen and (min-width: 500px) {
+    .top_nav_links {
+        flex-direction: row;
+        align-items: flex-start;
+        font-size: 1.5rem;
+    }
+
+    .top_nav_item {
+        margin: 0 20px;
+    }
 }

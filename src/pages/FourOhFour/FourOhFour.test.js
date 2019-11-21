@@ -3,22 +3,14 @@ import ReactDOM from 'react-dom';
 import { BrowserRouter, Router } from 'react-router-dom';
 
 import TestHelpers from '../../helpers/TestHelpers';
-import About from './About';
-
-const history = {
-    createHref: jest.fn(),
-    listen: jest.fn(),
-    location: {
-        pathname: '/',
-    }
-};
+import FourOhFour from './FourOhFour';
 
 it('renders without crashing', () => {
   const div = document.createElement('div');
   ReactDOM.render(
     <BrowserRouter>
         <Router history={TestHelpers.dummyHistory}>
-            <About />
+            <FourOhFour />
         </Router>
     </BrowserRouter>, div);
   ReactDOM.unmountComponentAtNode(div);
