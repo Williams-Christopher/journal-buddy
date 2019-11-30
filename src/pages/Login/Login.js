@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 
 import ApiServices from '../../services/api-services';
 import TokenServices from '../../services/token-services';
+import AppContext from '../../context/AppContext';
 
 import './Login.css';
 
@@ -14,7 +15,10 @@ class Login extends React.Component {
         this.login_password = React.createRef();
     };
 
+    static contextType = AppContext;
+
     redirectOnLoginSuccess = () => {
+        this.context.setLoginState();
         this.props.history.push('/List');
     };
 
