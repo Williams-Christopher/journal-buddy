@@ -21,7 +21,7 @@ const ApiServices = {
     },
 
     // Login POST /api/login
-    postAuth(loginUser) {
+    postLogin(loginUser) {
         return fetch(`${API_BASE_URL}/login`, {
             method: 'POST',
             headers: {
