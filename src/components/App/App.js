@@ -12,9 +12,30 @@ import Login from '../../pages/Login/Login';
 import Reports from '../../pages/Reports/Reports';
 import FourOhFour from '../../pages/FourOhFour/FourOhFour';
 
+import TokenServices from '../../services/token-services';
+
 // import './App.css';
 
 class App extends React.Component {
+  componentDidMount() {
+    TokenServices.insertToken('eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNTc0ODM5OTEzLCJzdWIiOiJwc3RpY2tpbmdzMCJ9.RsuQsBfVRs47uTO110CDav2ki8tpQa8GYI2t0cvf7Pk');
+    
+    fetch('http://localhost:8000/api/journal-entries', {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${TokenServices.getToken()}`,
+      },
+    })
+    .then(result => {
+      return result.json()
+    })
+    .then(content => {
+      console.log(content);
+    })
+    .catch(error => console.log(error));
+  }
+
   render() {
     return (
       <>
