@@ -2,7 +2,7 @@ import {API_BASE_URL} from '../config';
 import TokenServices from './token-services';
 
 const ApiServices = {
-    // Create new user POST /api/users
+    // Create new user -> POST /api/users
     postUser(newUser) {
         return fetch(`${API_BASE_URL}/users`, {
             method: 'POST',
@@ -20,7 +20,7 @@ const ApiServices = {
         });
     },
 
-    // Login POST /api/login
+    // Login -> POST /api/login
     postLogin(loginUser) {
         return fetch(`${API_BASE_URL}/login`, {
             method: 'POST',
@@ -37,9 +37,9 @@ const ApiServices = {
             return result.json();
         });
     },
-    // Refresh token? POST /api/refresh
+    // Refresh token -> POST /api/refresh
 
-    // post a journal entry POST /api/journal-entries
+    // Add a new journal entry -> POST /api/journal-entries
     postEntry(newEntry) {
         return fetch(`${API_BASE_URL}/journal-entries`, {
             method: 'POST',
@@ -58,7 +58,7 @@ const ApiServices = {
         });
     },
 
-    // Get all posts GET /api/journal-entries
+    // List all posts for user -> GET /api/journal-entries
     getEntries() {
         return fetch(`${API_BASE_URL}/journal-entries`, {
             method: 'GET',
@@ -76,7 +76,7 @@ const ApiServices = {
         });
     },
 
-    // Get an individual post GET /api/journal-entries/:entry_id
+    // Grab an individual entry for user -> GET /api/journal-entries/:entry_id
     getEntry(entryId) {
         return fetch(`${API_BASE_URL}/journal-entries/${entryId}`, {
             method: 'GET',
@@ -94,7 +94,7 @@ const ApiServices = {
         });
     },
 
-    // Get a permalinked entry GET /api/share/json/:entry_id
+    // Display a permalinked entry -> GET /api/share/json/:entry_id
     getPermaLinkJSON(entryId) {
         return fetch(`${API_BASE_URL}/share/json/${entryId}`, {
             method: 'GET',
@@ -111,7 +111,7 @@ const ApiServices = {
         });
     },
 
-    // Get metrics GET /api/metrics
+    // Metrics -> GET /api/metrics
     getMetrics() {
         return fetch(`${API_BASE_URL}/metrics`, {
             method: 'GET',
