@@ -1,7 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import { getShortFormattedEntryTitle, getStringForPrivacyValue, getStringForUTCDate } from '../../helpers/Helpers';
+import {
+    getShortFormattedEntryTitle,
+    getStringForPrivacyValue,
+    getStringForUTCDate,
+    getStringForFeelingValue,
+    getPreviewString,
+} from '../../helpers/Helpers';
 import './JournalListItem.css';
 
 class JournalListItem extends React.Component {
@@ -16,9 +22,9 @@ class JournalListItem extends React.Component {
                     </Link>
                 </h2>
                 <h3>{getStringForUTCDate(this.props.created)}</h3>
-                <p>Feeling: {this.props.feeling}</p>
+                <p>Feeling: {getStringForFeelingValue(this.props.feeling)}</p>
                 <p>Privacy: {getStringForPrivacyValue(this.props.privacy)}</p>
-                <p>Preview: {this.props.body}</p>
+                <p>Preview: {getPreviewString(this.props.body, 45)}</p>
             </section>
         );
     };

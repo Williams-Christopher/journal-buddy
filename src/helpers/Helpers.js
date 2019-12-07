@@ -49,10 +49,15 @@ function getStringForPrivacyValue(privacy) {
     return privacy === 0 ? `private` : `public`;
 }
 
+function getPreviewString(string, length) {
+    return `${string.slice(0, length)}...`;
+}
+
 export {
     getLongFormattedEntryTitle,
     getShortFormattedEntryTitle,
     getStringForUTCDate,
     getStringForFeelingValue,
     getStringForPrivacyValue,
+    getPreviewString,
 };
