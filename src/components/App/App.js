@@ -23,6 +23,10 @@ class App extends React.Component {
     this.state = { isLoggedIn: false };
   };
 
+  componentDidMount() {
+    this.setLoginState();
+  };
+
   setLoginState = () => {
     this.setState({ isLoggedIn: TokenServices.hasToken() });
   };

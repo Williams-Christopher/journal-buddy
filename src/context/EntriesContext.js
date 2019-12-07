@@ -3,8 +3,10 @@ import React from 'react';
 const EntriesContext = React.createContext({
     entriesError: null,
     entries: [],
-    // Entry sorting
-    // Entry filter
+    entrySort: null,
+    sortEntryList: () => {},
+    privacyFilter: null,
+    filterOnPrivacy: () => {},
 });
 
 export default EntriesContext;

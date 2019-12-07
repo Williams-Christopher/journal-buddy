@@ -51,7 +51,15 @@ function getStringForPrivacyValue(privacy) {
 
 function getPreviewString(string, length) {
     return `${string.slice(0, length)}...`;
-}
+};
+
+function filterPrivacyAll(entries) {
+    return entries.filter(entry => entry.privacy === 0 || entry.privacy === 1);
+};
+
+function filterPrivacy(entries, value) {
+    return entries.filter(entry => entry.privacy === value);
+};
 
 export {
     getLongFormattedEntryTitle,
@@ -60,4 +68,6 @@ export {
     getStringForFeelingValue,
     getStringForPrivacyValue,
     getPreviewString,
+    filterPrivacyAll,
+    filterPrivacy,
 };
