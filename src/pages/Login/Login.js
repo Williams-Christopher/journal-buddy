@@ -36,7 +36,7 @@ class Login extends React.Component {
 
         ApiServices.postLogin(loginUser)
             .then(token => {
-                TokenServices.insertToken(token);
+                TokenServices.insertToken(token.authToken);
                 this.redirectOnLoginSuccess();
             })
             .catch(error => {

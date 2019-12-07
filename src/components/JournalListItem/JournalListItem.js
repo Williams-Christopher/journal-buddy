@@ -12,13 +12,13 @@ class JournalListItem extends React.Component {
             <section className='journal_list_item'>
                 <h2>
                     <Link className='common_link' to={pathString}>
-                        {getShortFormattedEntryTitle(this.props.entry_title)}
+                        {getShortFormattedEntryTitle(this.props.title)}
                     </Link>
                 </h2>
-                <h3>{getStringForUTCDate(this.props.entry_date)}</h3>
-                <p>Feeling: {this.props.entry_feeling}</p>
-                <p>Privacy: {getStringForPrivacyValue(this.props.entry_privacy)}</p>
-                <p>Preview: {this.props.entry_body}</p>
+                <h3>{getStringForUTCDate(this.props.created)}</h3>
+                <p>Feeling: {this.props.feeling}</p>
+                <p>Privacy: {getStringForPrivacyValue(this.props.privacy)}</p>
+                <p>Preview: {this.props.body}</p>
             </section>
         );
     };
