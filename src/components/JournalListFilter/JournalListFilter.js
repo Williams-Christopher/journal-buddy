@@ -13,6 +13,7 @@ class JournalListFilter extends React.Component {
 
     handleSortChange = e => {
         console.log(e.target.value);
+        this.context.sortOnDate(e.target.value);
     };
 
     render() {
@@ -21,10 +22,10 @@ class JournalListFilter extends React.Component {
                 <fieldset>
                     <label htmlFor='list_sort'>Sort entries: </label>
                     <select name='list_sort' id='list_sort' onChange={(event) => this.handleSortChange(event)}>
-                        <option value='dateasc' defaultValue>Date - Recent first</option>
-                        <option value='datedesc'>Date - Oldest first</option>
-                        <option value='feelasc'>Feeling - Ascending</option>
-                        <option value='feeldesc'>Feeling - Descending</option>
+                        <option value='datedesc' defaultValue>Date - Recent first</option>
+                        <option value='dateasc'>Date - Oldest first</option>
+                        {/* <option value='feelasc'>Feeling - Ascending</option>
+                        <option value='feeldesc'>Feeling - Descending</option> */}
                     </select>
                 </fieldset>
                 <fieldset>

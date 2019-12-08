@@ -5,7 +5,7 @@ import JournalListFilter from '../../components/JournalListFilter/JournalListFil
 import JournalListItem from '../../components/JournalListItem/JournalListItem';
 import EntriesContext from '../../context/EntriesContext';
 
-import {filterPrivacyAll, filterPrivacy} from '../../helpers/Helpers';
+import { filterPrivacyAll, filterPrivacy, sortDateAscending, sortDateDescending } from '../../helpers/Helpers';
 import './JournalEntryList.css';
 
 class JournalEntryList extends React.Component {
@@ -16,10 +16,10 @@ class JournalEntryList extends React.Component {
             entriesReceived: false,
             entries: [],
             processedEntries: [],
-            entrySort: 'dateasc',
-            privacyFilter: 'all',
-        }
-    }
+            sortValueDate: 'datedesc',
+            filterValuePrivacy: 'all',
+        };
+    };
 
     componentDidMount() {
         ApiServices.getEntries()
@@ -27,31 +27,67 @@ class JournalEntryList extends React.Component {
                 this.setState({
                     entries: entryList,
                     processedEntries: entryList
-                });
+                }, () => this.processEntries());
+
             })
-            .catch(error => this.setState({error: error.message}));
+            .catch(error => this.setState({ error: error.message }));
     };
 
-    filterEntryListOnPrivacy = (filterValue) => {
-        let tempEntries = [];
+    setPrivacyFilter = (filterValue) => {
         filterValue = isNaN(filterValue) ? filterValue : parseInt(filterValue);
-        this.setState({privacyFilter: filterValue})
+        this.setState(
+            { filterValuePrivacy: filterValue },
+            () => this.processEntries()
+        );
+    };
 
-        if(filterValue === 'all') {
-            tempEntries = filterPrivacyAll(this.state.entries);
-        } else if (filterValue === 0 || filterValue === 1) {
-            tempEntries = filterPrivacy(this.state.entries, filterValue);
+    setDateSort = (sortValue) => {
+        this.setState(
+            { sortValueDate: sortValue },
+            () => this.processEntries()
+        );
+    };
+
+    processEntries = () => {
+        let sortedEntries = this.sortEntriesByDate();
+        let filteredEntries = this.filterEntriesOnPrivacy(sortedEntries);
+
+        this.setState({
+            processedEntries: filteredEntries,
+        });
+    }
+
+    sortEntriesByDate = () => {
+        let sortedEntries = [];
+        if (this.state.sortValueDate === 'datedesc') {
+            sortedEntries = sortDateDescending(this.state.entries);
+        } else if (this.state.sortValueDate === 'dateasc') {
+            sortedEntries = sortDateAscending(this.state.entries);
+        };
+
+        return sortedEntries;
+    };
+
+    filterEntriesOnPrivacy = (entries) => {
+        let filteredEntries = [];
+
+        if (this.state.filterValuePrivacy === 'all') {
+            filteredEntries = filterPrivacyAll(entries);
+        } else if (this.state.filterValuePrivacy === 0 || this.state.filterValuePrivacy === 1) {
+            filteredEntries = filterPrivacy(entries, this.state.filterValuePrivacy);
         }
-        this.setState({processedEntries: tempEntries});
+
+        return filteredEntries;
     };
 
     render() {
         const entriesContextValue = {
             entriesError: this.state.entriesError,
-            entries: this.state.processedEntries,
-            entrySort: this.state.entrySort,
-            privacyFilter: this.state.privacyFilter,
-            filterOnPrivacy: this.filterEntryListOnPrivacy,
+            entries: this.state.entries,
+            sortValueDate: this.state.sortValueDate,
+            filterValuePrivacy: this.state.privacyFilter,
+            filterOnPrivacy: this.setPrivacyFilter,
+            sortOnDate: this.setDateSort,
         };
 
         return (

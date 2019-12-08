@@ -61,6 +61,18 @@ function filterPrivacy(entries, value) {
     return entries.filter(entry => entry.privacy === value);
 };
 
+function sortDateAscending(entries) {
+    return entries.sort((a, b) => {
+        return a.created < b.created ? -1 : a.created > b.created ? 1 : 0;
+    });
+};
+
+function sortDateDescending(entries) {
+    return entries.sort((a, b) => {
+        return a.created > b.created ? -1 : a.created < b.created ? 1 : 0;
+    });
+};
+
 export {
     getLongFormattedEntryTitle,
     getShortFormattedEntryTitle,
@@ -70,4 +82,6 @@ export {
     getPreviewString,
     filterPrivacyAll,
     filterPrivacy,
+    sortDateAscending,
+    sortDateDescending,
 };
