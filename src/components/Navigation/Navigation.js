@@ -53,11 +53,18 @@ class Navigation extends React.Component {
                         </>
                     }
                     {!this.context.isLoggedIn ?
-                    <li className='top_nav_item'>
-                        <Link className='common_link top_nav_link' to='/Login'>
-                            Login
-                        </Link>
-                    </li>
+                        <>
+                            <li className='top_nav_item'>
+                                <Link className='common_link top_nav_link' to='/Register'>
+                                    Register
+                                </Link>
+                            </li>
+                            <li className='top_nav_item'>
+                                <Link className='common_link top_nav_link' to='/Login'>
+                                    Login
+                                </Link>
+                            </li>
+                        </>
                     : null
     }
                 </ul>
