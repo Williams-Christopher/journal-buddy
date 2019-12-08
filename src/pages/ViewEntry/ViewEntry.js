@@ -5,7 +5,7 @@ import './ViewEntry.css';
 
 class ViewEntry extends React.Component {
     getEntry(targetEntryId) {
-        return this.props.entries.filter(entry => entry.entry_id == targetEntryId)
+        return this.props.entries.filter(entry => entry.id == targetEntryId)
     };
 
     entryFound(entry) {
@@ -17,13 +17,13 @@ class ViewEntry extends React.Component {
                 <button className='common_button'>Copy permalink</button>
                 <button className='common_button'>Back to list</button>
                 <p className='view_entry_date'>
-                    { getLongFormattedEntryTitle(entry.entry_title, entry.entry_date) }
+                    { getLongFormattedEntryTitle(entry.title, entry.created) }
                 </p>
                 <p className='view_entry_feeling'>
-                    I was feeling: { getStringForFeelingValue(entry.entry_feeling) } - Privacy: { getStringForPrivacyValue(entry.entry_privacy) }
+                    I was feeling: { getStringForFeelingValue(entry.feeling) } - Privacy: { getStringForPrivacyValue(entry.privacy) }
                 </p>
                 <article className='view_entry_body'>
-                    { entry.entry_body }
+                    { entry.body }
                 </article>
             </section>
         );
