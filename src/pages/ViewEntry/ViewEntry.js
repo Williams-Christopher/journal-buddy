@@ -30,10 +30,6 @@ class ViewEntry extends React.Component {
             .catch(error => this.setState({error: error}));
     };
 
-    getEntry(targetEntryId) {
-        return this.props.entries.filter(entry => entry.id == targetEntryId)
-    };
-
     handleCopyButton = () => {
         const permalinkUrl = `https://journal-buddy.cwilliams.now.sh/permalink/${this.state.entry.entry_id}`;
         navigator.clipboard.writeText(permalinkUrl);
