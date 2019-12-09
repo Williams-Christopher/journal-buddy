@@ -44,7 +44,8 @@ class App extends React.Component {
           <main>
             <Switch>
               <Route exact path='/' component={About} />
-              <Route path='/List' render={componentProps => <JournalEntryList entries={this.props.entries} />} />
+              {/* <Route path='/List' render={componentProps => <JournalEntryList entries={this.props.entries} />} /> */}
+              <Route path='/List' component={JournalEntryList} />
               <Route path='/Create' component={CreateEntry} />
               <Route path='/View/:entry_id' render={({ match }, componentProps) => <ViewEntry match={match} entries={this.props.entries} />} />
               <Route path='/Register' component={Register} />
