@@ -54,7 +54,7 @@ const ApiServices = {
                 return result.json().then(error => Promise.reject(error))
             }
 
-            return result.json();
+            return result;
         });
     },
 

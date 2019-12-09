@@ -89,20 +89,23 @@ class JournalEntryList extends React.Component {
             filterOnPrivacy: this.setPrivacyFilter,
             sortOnDate: this.setDateSort,
         };
-
-        return (
-            <EntriesContext.Provider value={entriesContextValue}>
-                <section className='journal_entry_list'>
-                    <h2>
-                        Journal Entries
+        if (this.state.error) {
+            return (<p className='common_error'>{this.state.error}</p>);
+        } else {
+            return (
+                <EntriesContext.Provider value={entriesContextValue}>
+                    <section className='journal_entry_list'>
+                        <h2>
+                            Journal Entries
                     </h2>
-                    <JournalListFilter />
-                    <section className='journal_entries_list'>
-                        {this.state.processedEntries.map(entryData => <JournalListItem key={entryData.id} {...entryData} />)}
+                        <JournalListFilter />
+                        <section className='journal_entries_list'>
+                            {this.state.processedEntries.map(entryData => <JournalListItem key={entryData.id} {...entryData} />)}
+                        </section>
                     </section>
-                </section>
-            </EntriesContext.Provider>
-        );
+                </EntriesContext.Provider>
+            );
+        };
     };
 };
 

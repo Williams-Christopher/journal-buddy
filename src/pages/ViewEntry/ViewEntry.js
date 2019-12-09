@@ -24,10 +24,9 @@ class ViewEntry extends React.Component {
     };
 
     componentDidMount() {
-        console.log('Entry: ', this.props.match.params);
         ApiServices.getEntry(this.props.match.params.entry_id)
             .then(result => this.setState({entry: result}, () => console.log('TITLE: ', this.state.entry.title)))
-            .catch(error => this.setState({error: error}));
+            .catch(error => this.setState({error: error.message}));
     };
 
     handleCopyButton = () => {
