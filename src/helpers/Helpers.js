@@ -49,10 +49,39 @@ function getStringForPrivacyValue(privacy) {
     return privacy === 0 ? `private` : `public`;
 }
 
+function getPreviewString(string, length) {
+    return `${string.slice(0, length)}...`;
+};
+
+function filterPrivacyAll(entries) {
+    return entries.filter(entry => entry.privacy === 0 || entry.privacy === 1);
+};
+
+function filterPrivacy(entries, value) {
+    return entries.filter(entry => entry.privacy === value);
+};
+
+function sortDateAscending(entries) {
+    return entries.sort((a, b) => {
+        return a.created < b.created ? -1 : a.created > b.created ? 1 : 0;
+    });
+};
+
+function sortDateDescending(entries) {
+    return entries.sort((a, b) => {
+        return a.created > b.created ? -1 : a.created < b.created ? 1 : 0;
+    });
+};
+
 export {
     getLongFormattedEntryTitle,
     getShortFormattedEntryTitle,
     getStringForUTCDate,
     getStringForFeelingValue,
     getStringForPrivacyValue,
+    getPreviewString,
+    filterPrivacyAll,
+    filterPrivacy,
+    sortDateAscending,
+    sortDateDescending,
 };

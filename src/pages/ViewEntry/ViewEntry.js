@@ -1,29 +1,59 @@
 import React from 'react';
+import {withRouter} from 'react-router-dom';
 
+import ApiServices from '../../services/api-services';
 import { getLongFormattedEntryTitle, getStringForFeelingValue, getStringForPrivacyValue } from '../../helpers/Helpers';
 import './ViewEntry.css';
 
 class ViewEntry extends React.Component {
-    getEntry(targetEntryId) {
-        return this.props.entries.filter(entry => entry.entry_id == targetEntryId)
+    constructor(props) {
+        super(props);
+        this.state = {
+            error: null,
+            entry: {
+                id: null,
+                user_id: null,
+                entry_id: null,
+                feeling: null,
+                title: null,
+                body: null, 
+                privacy: null,
+                cerated: null,
+            },
+        };
     };
 
-    entryFound(entry) {
+    componentDidMount() {
+        ApiServices.getEntry(this.props.match.params.entry_id)
+            .then(result => this.setState({entry: result}, () => console.log('TITLE: ', this.state.entry.title)))
+            .catch(error => this.setState({error: error.message}));
+    };
+
+    handleCopyButton = () => {
+        const permalinkUrl = `https://journal-buddy.cwilliams.now.sh/permalink/${this.state.entry.entry_id}`;
+        navigator.clipboard.writeText(permalinkUrl);
+    };
+
+    handleBackButton = () => {
+        this.props.history.push('/List');
+    };
+
+    entryFound() {
         return (
             <section className='view_entry'>
                 <h2>
                     View Journal Entry
                 </h2>
-                <button className='common_button'>Copy permalink</button>
-                <button className='common_button'>Back to list</button>
+                <button className='common_button' onClick={() => this.handleCopyButton()}>Copy permalink</button>
+                <button className='common_button' onClick={() => this.handleBackButton()}>Back to list</button>
                 <p className='view_entry_date'>
-                    { getLongFormattedEntryTitle(entry.entry_title, entry.entry_date) }
+                    { getLongFormattedEntryTitle(this.state.entry.title, this.state.entry.created) }
                 </p>
                 <p className='view_entry_feeling'>
-                    I was feeling: { getStringForFeelingValue(entry.entry_feeling) } - Privacy: { getStringForPrivacyValue(entry.entry_privacy) }
+                    I was feeling: { getStringForFeelingValue(this.state.entry.feeling) } - Privacy: { getStringForPrivacyValue(this.state.entry.privacy) }
                 </p>
                 <article className='view_entry_body'>
-                    { entry.entry_body }
+                    { this.state.entry.body }
                 </article>
             </section>
         );
@@ -33,22 +63,19 @@ class ViewEntry extends React.Component {
         return (
             <section className='view_entry'>
                 <h2>
-                    No matching entry found
+                    <p>No matching entry found or you are not signed in</p>
                 </h2>
             </section>
         );
     };
 
     render() {
-        const { entry_id } = this.props.match.params;
-        const entry = this.getEntry(entry_id)[0];
-
-        if (entry.length === 0) {
+        if (this.state.error) {
             return (this.entryNotFound())
         } else {
-            return (this.entryFound(entry))
+            return (this.entryFound())
         }
     };
 };
 
-export default ViewEntry;
+export default withRouter(ViewEntry);

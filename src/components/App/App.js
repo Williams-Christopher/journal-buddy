@@ -12,26 +12,50 @@ import Login from '../../pages/Login/Login';
 import Reports from '../../pages/Reports/Reports';
 import FourOhFour from '../../pages/FourOhFour/FourOhFour';
 
+import AppContext from '../../context/AppContext';
+import TokenServices from '../../services/token-services';
+
 // import './App.css';
 
 class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { isLoggedIn: false };
+  };
+
+  componentDidMount() {
+    this.setLoginState();
+  };
+
+  setLoginState = () => {
+    this.setState({ isLoggedIn: TokenServices.hasToken() });
+  };
+
   render() {
+    const appContextValue = {
+      isLoggedIn: this.state.isLoggedIn,
+      setLoginState: this.setLoginState,
+    }
+
     return (
       <>
-        <Navigation />
-        <main>
-          <Switch>
-            <Route exact path='/' component={About} />
-            <Route path='/List' render={componentProps => <JournalEntryList entries={this.props.entries} />} />
-            <Route path='/Create' component={CreateEntry} />
-            <Route path='/View/:entry_id' render={({ match }, componentProps) => <ViewEntry match={match} entries={this.props.entries} />} />
-            <Route path='/Register' component={Register} />
-            <Route path='/Login' component={Login} />
-            <Route path='/Reports' component={Reports} />
-            <Route component={FourOhFour} />
-          </Switch>
-        </main>
-        <Footer />
+        <AppContext.Provider value={appContextValue}>
+          <Navigation />
+          <main>
+            <Switch>
+              <Route exact path='/' component={About} />
+              {/* <Route path='/List' render={componentProps => <JournalEntryList entries={this.props.entries} />} /> */}
+              <Route path='/List' component={JournalEntryList} />
+              <Route path='/Create' component={CreateEntry} />
+              <Route path='/View/:entry_id' render={({ match }, componentProps) => <ViewEntry match={match} entries={this.props.entries} />} />
+              <Route path='/Register' component={Register} />
+              <Route path='/Login' component={Login} />
+              <Route path='/Reports' component={Reports} />
+              <Route component={FourOhFour} />
+            </Switch>
+          </main>
+          <Footer />
+        </AppContext.Provider>
       </>
     );
   };
