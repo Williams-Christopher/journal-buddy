@@ -51,7 +51,8 @@ const ApiServices = {
         })
         .then(result => {
             if(!result.ok) {
-                return result.json().then(error => Promise.reject(error))
+                // return result.json().then(error => Promise.reject(error))
+                return result.then(error => Promise.reject(error))
             }
 
             return result;

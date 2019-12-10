@@ -92,6 +92,11 @@ section {
   background-color: darkgrey;
 }
 
+.common_form .helper_text {
+  font-size: small;
+  color: blue;
+}
+
 /*
   Generic error formatting
 */
