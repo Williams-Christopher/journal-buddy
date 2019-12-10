@@ -60,6 +60,7 @@ class Login extends React.Component {
                     <input type='password' name='login_password' id='login_password' ref={this.login_password} required />
                     <button className='common_button' type='submit'>Login</button>
                 </form>
+                <p>For a demonstration, use pstickings0 with password01</p>
             </section>
         );
     };
