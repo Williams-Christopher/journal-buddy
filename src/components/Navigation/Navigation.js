@@ -36,13 +36,13 @@ class Navigation extends React.Component {
                                 </Link>
                             </li>
                             <li className='top_nav_item'>
-                                <Link className='common_link top_nav_link' to='/List'>
-                                    List
+                                <Link className='common_link top_nav_link' to='/MyEntries'>
+                                    My Entries
                                 </Link>
                             </li>
                             <li className='top_nav_item'>
-                                <Link className='common_link top_nav_link' to='/Reports'>
-                                    Reports
+                                <Link className='common_link top_nav_link' to='/Metrics'>
+                                    Metrics
                                 </Link>
                             </li>
                             <li className='top_nav_item'>
