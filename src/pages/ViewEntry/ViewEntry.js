@@ -25,7 +25,7 @@ class ViewEntry extends React.Component {
 
     componentDidMount() {
         ApiServices.getEntry(this.props.match.params.entry_id)
-            .then(result => this.setState({entry: result}, () => console.log('TITLE: ', this.state.entry.title)))
+            .then(result => this.setState({entry: result}))
             .catch(error => this.setState({error: error.message}));
     };
 
@@ -35,7 +35,7 @@ class ViewEntry extends React.Component {
     };
 
     handleBackButton = () => {
-        this.props.history.push('/List');
+        this.props.history.push('/MyEntries');
     };
 
     entryFound() {

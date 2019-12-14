@@ -7,12 +7,10 @@ class JournalListFilter extends React.Component {
     static contextType = EntriesContext;
 
     handlePrivacyFilterChange = e => {
-        console.log(e.target.value)
         this.context.filterOnPrivacy(e.target.value);
     };
 
     handleSortChange = e => {
-        console.log(e.target.value);
         this.context.sortOnDate(e.target.value);
     };
 

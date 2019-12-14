@@ -19,7 +19,7 @@ class Login extends React.Component {
 
     redirectOnLoginSuccess = () => {
         this.context.setLoginState();
-        this.props.history.push('/List');
+        this.props.history.push('/MyEntries');
     };
 
     handleLoginRequest = event => {

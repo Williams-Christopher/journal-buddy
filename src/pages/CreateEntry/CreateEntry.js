@@ -51,7 +51,7 @@ class CreateEntry extends React.Component {
     };
 
     redirectOnSubmitSuccess = () => {
-        this.props.history.push('/List');
+        this.props.history.push('/MyEntries');
     };
 
     handlePrivacyOptionChange = (e) => {
