@@ -85,10 +85,10 @@ class Reports extends React.Component {
 
     showCallToAction = () => {
         return (
-            <section className='journal-reports'>
+            <>
                 <p>You haven't made any journal entries so we can not provide any metrics for you.</p>
                 <p>Why not get started and <Link to='/Create'>write an entry</Link> now?</p>
-            </section>
+            </>
         );
     };
 

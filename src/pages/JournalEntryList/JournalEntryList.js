@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 
 import ApiServices from '../../services/api-services';
 import JournalListFilter from '../../components/JournalListFilter/JournalListFilter';
@@ -12,6 +13,7 @@ class JournalEntryList extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
+            requestComplete: false,
             entriesError: null,
             entriesReceived: false,
             entries: [],
@@ -26,7 +28,8 @@ class JournalEntryList extends React.Component {
             .then(entryList => {
                 this.setState({
                     entries: entryList,
-                    processedEntries: entryList
+                    processedEntries: entryList,
+                    requestComplete: true,
                 }, () => this.processEntries());
 
             })
@@ -80,6 +83,26 @@ class JournalEntryList extends React.Component {
         return filteredEntries;
     };
 
+    showCallToAction = () => {
+        return (
+            <>
+                <p>You haven't made any journal entries so there's nothing to show you.</p>
+                <p>Why not get started and <Link to='/Create'>write an entry</Link> now?</p>
+            </>
+        )
+    };
+
+    showJournalEntries = () => {
+        return (
+            <>
+                <JournalListFilter />
+                <section className='journal_entries_list'>
+                    {this.state.processedEntries.map(entryData => <JournalListItem key={entryData.id} {...entryData} />)}
+                </section>
+            </>
+        )
+    };
+
     render() {
         const entriesContextValue = {
             entriesError: this.state.entriesError,
@@ -89,19 +112,22 @@ class JournalEntryList extends React.Component {
             filterOnPrivacy: this.setPrivacyFilter,
             sortOnDate: this.setDateSort,
         };
+
+        let renderData;
+        if(this.state.entries.length === 0) {
+            renderData = this.showCallToAction();
+        } else {
+            renderData = this.showJournalEntries();
+        }
+
         if (this.state.error) {
             return (<p className='common_error'>{this.state.error}</p>);
         } else {
             return (
                 <EntriesContext.Provider value={entriesContextValue}>
                     <section className='journal_entry_list'>
-                        <h2>
-                            Journal Entries
-                    </h2>
-                        <JournalListFilter />
-                        <section className='journal_entries_list'>
-                            {this.state.processedEntries.map(entryData => <JournalListItem key={entryData.id} {...entryData} />)}
-                        </section>
+                        <h2>Journal Entries</h2>
+                        {renderData}
                     </section>
                 </EntriesContext.Provider>
             );
