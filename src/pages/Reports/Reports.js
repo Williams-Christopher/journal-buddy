@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import { Bar } from 'react-chartjs-2';
 
@@ -82,39 +83,63 @@ class Reports extends React.Component {
         return words.join(' ');
     };
 
-    render() {
-        if (this.state.requestComplete) {
-            return (
-                <section className='journal_reports'>
-                    <h2>
-                        Journal Reports
-                </h2>
+    showCallToAction = () => {
+        return (
+            <section className='journal-reports'>
+                <p>You haven't made any journal entries so we can not provide any metrics for you.</p>
+                <p>Why not get started and <Link to='/Create'>write an entry</Link> now?</p>
+            </section>
+        );
+    };
 
-                    <section className='metrics-containter'>
-                        <section className='metrics-tiles-container'>
-                            <div className='metrics-tile'>
-                                <p>Total Entries</p>
-                                <p>{this.state.data.total_entries}</p>
-                            </div>
-                            <div className='metrics-tile'>
-                                <p>Private Entries</p>
-                                <p>{this.state.data.private_entries}</p>
-                            </div>
-                            <div className='metrics-tile'>
-                                <p>Public Entries</p>
-                                <p>{this.state.data.public_entries}</p>
-                            </div>
-                        </section>
-                        <section className='metrics-graphs-container'>
-                            {this.graphDataKeys.map(key => this.createBarGraph(key))}
-                        </section>
-                    </section>
-                    <p><br />Return to previous page</p>
+    showLoadingMessage = () => {
+        return (
+            <p>Preparing...</p>
+        );
+    };
+
+    showMetrics = () => {
+        return (
+            <section className='metrics-containter'>
+                <section className='metrics-tiles-container'>
+                    <div className='metrics-tile'>
+                        <p>Total Entries</p>
+                        <p>{this.state.data.total_entries}</p>
+                    </div>
+                    <div className='metrics-tile'>
+                        <p>Private Entries</p>
+                        <p>{this.state.data.private_entries}</p>
+                    </div>
+                    <div className='metrics-tile'>
+                        <p>Public Entries</p>
+                        <p>{this.state.data.public_entries}</p>
+                    </div>
                 </section>
-            )
+                <section className='metrics-graphs-container'>
+                    {this.graphDataKeys.map(key => this.createBarGraph(key))}
+                </section>
+            </section>
+        );
+    };
+
+    render() {
+        let renderData;
+        if (this.state.requestComplete) {
+            if (this.state.data.total_entries === 0) {
+                renderData = this.showCallToAction();
+            } else {
+                renderData = this.showMetrics();
+            }
         } else {
-            return <p>Preparing...</p>
+            renderData = this.showLoadingMessage();
         };
+
+        return (
+            <section className='journal_reports'>
+                <h2>Journal Reports</h2>
+                {renderData}
+            </section>
+        )
     };
 };
 
