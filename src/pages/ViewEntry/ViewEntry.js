@@ -44,7 +44,7 @@ class ViewEntry extends React.Component {
                 <h2>
                     View Journal Entry
                 </h2>
-                <button className='common_button' onClick={() => this.handleCopyButton()}>Copy permalink</button>
+                <button className='common_button' disabled={this.state.entry.privacy === 0 ? true : false} onClick={() => this.handleCopyButton()}>Copy permalink</button>
                 <button className='common_button' onClick={() => this.handleBackButton()}>Back to list</button>
                 <p className='view_entry_date'>
                     { getLongFormattedEntryTitle(this.state.entry.title, this.state.entry.created) }
