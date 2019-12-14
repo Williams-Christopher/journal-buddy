@@ -136,7 +136,7 @@ class JournalEntryList extends React.Component {
             return (
                 <EntriesContext.Provider value={entriesContextValue}>
                     <section className='journal_entry_list'>
-                        <h2>Journal Entries</h2>
+                        <h2>Your Journal Entries</h2>
                         {renderData}
                     </section>
                 </EntriesContext.Provider>

@@ -136,7 +136,7 @@ class Reports extends React.Component {
 
         return (
             <section className='journal_reports'>
-                <h2>Journal Reports</h2>
+                <h2>Journal Metrics</h2>
                 {renderData}
             </section>
         )
