@@ -94,7 +94,7 @@ class Reports extends React.Component {
 
     showLoadingMessage = () => {
         return (
-            <p>Preparing...</p>
+            <div className='common_spinner'></div>
         );
     };
 

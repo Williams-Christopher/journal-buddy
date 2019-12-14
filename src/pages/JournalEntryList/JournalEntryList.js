@@ -103,6 +103,12 @@ class JournalEntryList extends React.Component {
         )
     };
 
+    showLoadingMessage = () => {
+        return (
+            <div className='common_spinner'></div>
+        );
+    };
+
     render() {
         const entriesContextValue = {
             entriesError: this.state.entriesError,
@@ -114,11 +120,15 @@ class JournalEntryList extends React.Component {
         };
 
         let renderData;
-        if(this.state.entries.length === 0) {
-            renderData = this.showCallToAction();
+        if (this.state.requestComplete) {
+            if (this.state.entries.length === 0) {
+                renderData = this.showCallToAction();
+            } else {
+                renderData = this.showJournalEntries();
+            };
         } else {
-            renderData = this.showJournalEntries();
-        }
+            renderData = this.showLoadingMessage();
+        };
 
         if (this.state.error) {
             return (<p className='common_error'>{this.state.error}</p>);
