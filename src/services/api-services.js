@@ -95,9 +95,9 @@ const ApiServices = {
         });
     },
 
-    // Display a permalinked entry -> GET /api/share/json/:entry_id
-    getPermaLinkJSON(entryId) {
-        return fetch(`${API_BASE_URL}/share/json/${entryId}`, {
+    // Display a permalinked / shared entry -> GET /api/share/:entry_id
+    getSharedEntry(entryId) {
+        return fetch(`${API_BASE_URL}/share/${entryId}`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
