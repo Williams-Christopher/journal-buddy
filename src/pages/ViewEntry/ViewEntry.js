@@ -30,7 +30,7 @@ class ViewEntry extends React.Component {
     };
 
     handleCopyButton = () => {
-        const permalinkUrl = `https://journal-buddy.cwilliams.now.sh/permalink/${this.state.entry.entry_id}`;
+        const permalinkUrl = `https://journal-buddy.cwilliams.now.sh/share/${this.state.entry.entry_id}`;
         navigator.clipboard.writeText(permalinkUrl);
     };
 

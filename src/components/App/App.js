@@ -10,6 +10,7 @@ import ViewEntry from '../../pages/ViewEntry/ViewEntry';
 import Register from '../../pages/Register/Register';
 import Login from '../../pages/Login/Login';
 import Reports from '../../pages/Reports/Reports';
+import ViewPermalink from '../../pages/ViewPermalink/ViewPermalink';
 import FourOhFour from '../../pages/FourOhFour/FourOhFour';
 
 import AppContext from '../../context/AppContext';
@@ -51,6 +52,7 @@ class App extends React.Component {
               <Route path='/Register' component={Register} />
               <Route path='/Login' component={Login} />
               <Route path='/Metrics' component={Reports} />
+              <Route path='/share/:entry_id' component={ViewPermalink} />
               <Route component={FourOhFour} />
             </Switch>
           </main>
