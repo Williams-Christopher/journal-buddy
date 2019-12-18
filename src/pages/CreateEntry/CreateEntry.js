@@ -54,6 +54,11 @@ class CreateEntry extends React.Component {
         this.props.history.push('/MyEntries');
     };
 
+    handleBackButton = (e) => {
+        e.preventDefault();
+        this.props.history.push('/MyEntries');
+    };
+
     handlePrivacyOptionChange = (e) => {
         if (e.target.value === '1' && this.state.displayedPrivacyNotice === false) {
             this.setState({displayedPrivacyNotice: true});
@@ -90,6 +95,7 @@ class CreateEntry extends React.Component {
                         <option value='0'>Private</option>
                         <option value='1'>Public</option>
                     </select>
+                    <button className='common_button' onClick={e => this.handleBackButton(e)}>Back to List</button>
                     <button className='common_button' type='submit'>Submit Entry</button>
                 </form>
             </section>
