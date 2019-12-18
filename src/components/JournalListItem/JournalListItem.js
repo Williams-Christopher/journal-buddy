@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { withRouter, Link  } from 'react-router-dom';
 
 import {
     getShortFormattedEntryTitle,
@@ -11,13 +11,24 @@ import {
 import './JournalListItem.css';
 
 class JournalListItem extends React.Component {
+    constructor(props) {
+        super(props);
+        this.pathString = `/View/${this.props.entry_id}`;
+    }
+
+
+    handleViewButtonClick = () => {
+        console.log('Click!');
+        this.props.history.push(this.pathString)
+    };
+
     render() {
-        const pathString = `/View/${this.props.entry_id}`;
+        // const pathString = `/View/${this.props.entry_id}`;
 
         return (
             <section className='journal_list_item'>
                 <h2>
-                    <Link className='common_link' to={pathString}>
+                    <Link className='common_link' to={this.pathString}>
                         {getShortFormattedEntryTitle(this.props.title)}
                     </Link>
                 </h2>
@@ -25,9 +36,10 @@ class JournalListItem extends React.Component {
                 <p>Feeling: {getStringForFeelingValue(this.props.feeling)}</p>
                 <p>Privacy: {getStringForPrivacyValue(this.props.privacy)}</p>
                 <p>Preview: {getPreviewString(this.props.body, 45)}</p>
+                <button className='common_button' onClick={e => this.handleViewButtonClick(e)}>View Entry</button>
             </section>
         );
     };
 };
 
-export default JournalListItem;
+export default withRouter(JournalListItem);
