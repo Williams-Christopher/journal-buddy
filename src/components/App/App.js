@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, Switch } from 'react-router-dom';
+import { Route, Switch, Redirect } from 'react-router-dom';
 
 import Navigation from '../Navigation/Navigation';
 import Footer from '../Footer/Footer';
@@ -45,13 +45,13 @@ class App extends React.Component {
           <main>
             <Switch>
               <Route exact path='/' component={About} />
-              {/* <Route path='/List' render={componentProps => <JournalEntryList entries={this.props.entries} />} /> */}
-              <Route path='/MyEntries' component={JournalEntryList} />
-              <Route path='/Create' component={CreateEntry} />
-              <Route path='/View/:entry_id' render={({ match }, componentProps) => <ViewEntry match={match} entries={this.props.entries} />} />
-              <Route path='/Register' component={Register} />
-              <Route path='/Login' component={Login} />
-              <Route path='/Metrics' component={Reports} />
+              {/* Paging Dr. DRY: Surely I can turn these conditional renders into a function/component through which the spice can flow*/}
+              <Route path='/MyEntries' render={componentProps => TokenServices.hasToken() ? <JournalEntryList /> : <Redirect to='/Login' />} />
+              <Route path='/Create' render={componentProps => TokenServices.hasToken() ? <CreateEntry /> : <Redirect to='/Login' />} />
+              <Route path='/View/:entry_id' render={({match}, componentProps) => TokenServices.hasToken() ? <ViewEntry match={match} /> : <Redirect to='/Login' />} />
+              <Route path='/Metrics' render={componentProps => TokenServices.hasToken() ? <Reports /> : <Redirect to='/Login' />} />
+              <Route path='/Register' render={componentProps => TokenServices.hasToken() ? <Redirect to='/MyEntries' /> : <Register />} />
+              <Route path='/Login' render={componentProps => TokenServices.hasToken() ? <Redirect to='/MyEntries' /> : <Login />} />
               <Route path='/share/:entry_id' component={ViewPermalink} />
               <Route component={FourOhFour} />
             </Switch>
