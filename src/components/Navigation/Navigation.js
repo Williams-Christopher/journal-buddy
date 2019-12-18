@@ -66,7 +66,7 @@ class Navigation extends React.Component {
                             </li>
                         </>
                     : null
-    }
+                    }
                 </ul>
             </nav>
         );
