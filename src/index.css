@@ -69,9 +69,12 @@ section {
   width: 100%;
 }
 
-.common_form input,
+/* .common_form input,
 .common_form select,
-.common_form textarea {
+.common_form textarea { */
+input,
+select,
+textarea {
   font-family: 'Proza Libre', sans-serif;
   font-size: 1.25rem;
   height: 2.75rem;
@@ -85,7 +88,7 @@ section {
 
 .common_form input,
 .common_form textarea {
-  padding: 2%;
+  padding: .25rem;
 }
 
 /* .common_form label,
@@ -104,11 +107,11 @@ section {
 }
 
 .common_button {
-  display: block;
+  display: inline-block;
   margin: 20px auto;
   height: 30px;
   min-width: 100px;
-  background-color: darkgrey;
+  background-color: lightgreen;
 }
 
 .common_form .helper_text {
@@ -131,8 +134,8 @@ section {
 */
 
 .common_spinner {
-  border: 8px solid #F4EADE;
-  border-top: 8px solid #2F496E;
+  border: 8px solid #F5F4F3;
+  border-top: 8px solid #268CFF;
   border-radius: 50%;
   width: 50px;
   height: 50px;

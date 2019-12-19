@@ -16,8 +16,8 @@ class JournalListFilter extends React.Component {
 
     render() {
         return (
-            <section className='journal_entry_filter'>
-                <fieldset>
+            <section className='journal_entry_filter_group'>
+                <div className={'select_set'}>
                     <label htmlFor='list_sort'>Sort entries: </label>
                     <select name='list_sort' id='list_sort' onChange={(event) => this.handleSortChange(event)}>
                         <option value='datedesc' defaultValue>Date - Recent first</option>
@@ -25,15 +25,15 @@ class JournalListFilter extends React.Component {
                         {/* <option value='feelasc'>Feeling - Ascending</option>
                         <option value='feeldesc'>Feeling - Descending</option> */}
                     </select>
-                </fieldset>
-                <fieldset>
+                </div>
+                <div className={'select_set'}>
                     <label htmlFor='list_privacy'>Privacy: </label>
                     <select name='list_privacy' id='list_privacy' onChange={(event) => this.handlePrivacyFilterChange(event)}>
                         <option value='all' defaultValue>All</option>
                         <option value='0'>Private</option>
                         <option value='1'>Public</option>
                     </select>
-                </fieldset>
+                </div>
             </section>
         );
     };
