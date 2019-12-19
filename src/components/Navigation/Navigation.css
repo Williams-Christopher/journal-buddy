@@ -1,9 +1,9 @@
 .top_nav {
     padding: 2%;
-    background-color: #aaa;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    background-color: #268CFF;
 }
 
 .top_nav_title {
@@ -17,6 +17,8 @@
     padding: 0;
     display: flex;
     flex-direction: column;
+    color: #0A0908;
+    margin-left: 0;
 }
 
 .top_nav_item {

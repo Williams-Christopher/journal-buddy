@@ -3,8 +3,9 @@
 }
 
 body {
+
   margin: 0;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Proza Libre", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   line-height: 1.5;
@@ -21,6 +22,7 @@ main {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  background-color: #F5F4F3;
 }
 
 section {
@@ -42,11 +44,11 @@ section {
 .common_link:visited,
 .common_link:hover,
 .common_link:active {
-  color: #555;
+  color: #0A0908;
 }
 
 .common_link:hover {
-  color: lightblue;
+  color: #50514F;
 }
 
 /*
@@ -70,14 +72,31 @@ section {
 .common_form input,
 .common_form select,
 .common_form textarea {
+  font-family: 'Proza Libre', sans-serif;
+  font-size: 1.25rem;
+  height: 2.75rem;
   width: 100%;
+  outline-color: #4B3F72;
 }
 
-.common_form label,
+.common_form textarea {
+  height: 50%;
+}
+
+.common_form input,
+.common_form textarea {
+  padding: 2%;
+}
+
+/* .common_form label,
 .common_form input,
 .common_form select,
 .common_form textarea {
-  margin: 15px 5;
+  margin-top: 10px;
+} */
+
+.common_form label {
+  margin-top: 3%;
 }
 
 .common_form textarea {
@@ -95,6 +114,7 @@ section {
 .common_form .helper_text {
   font-size: small;
   color: blue;
+  margin-top: 5px;
 }
 
 /*

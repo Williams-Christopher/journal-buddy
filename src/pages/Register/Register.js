@@ -107,17 +107,17 @@ class Register extends React.Component {
         return (
             <section className='register'>
                 <h2>Sign up for Journal Buddy</h2>
-                <em>Thanks for signing up for Journal Buddy!</em>
+                {/* <em>Thanks for signing up for Journal Buddy!</em> */}
                 <form className='common_form register_form' onSubmit={this.handleSubmit}>
                     {this.state.error && <p className='common_error'>{this.state.error}</p>}
 
                     <label htmlFor='user_name'>User name </label>
-                    <input type='text' name='user_name' id='user_name' onChange={(e) => this.userNameChanged(e)} required />
+                    <input type='text' name='user_name' id='user_name' className={'active_anim'}onChange={(e) => this.userNameChanged(e)} required />
                     {!this.state.validUserName && <p className='common_form helper_text'>Used to log in and should be 3 to 15 characters</p>}
 
                     <label htmlFor='email'>Email </label>
                     <input type='text' name='email' id='email' onChange={(e) => this.emailChanged(e)} required />
-                    {!this.state.validEmail && <p className='common_form helper_text'>Email should be in the format user@domain.tld and will not be shared or sold</p>}
+                    {!this.state.validEmail && <p className='common_form helper_text'>Email should be in the format user@domain.tld. It will not be shared or sold</p>}
 
                     <label htmlFor='first_name'>Name </label>
                     <input type='text' name='first_name' id='first_name' onChange={(e) => this.firstNameChanged(e)} required />
@@ -133,7 +133,7 @@ class Register extends React.Component {
 
                     <button className='common_button' type='submit'>Signup</button>
                 </form>
-                Already have an account? <Link className='common_link' to='/Login'>Login</Link>
+                <p>Already have an account? <Link className='common_link' to='/Login'>Login</Link></p>
             </section>
         );
     };
