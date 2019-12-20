@@ -125,9 +125,7 @@ textarea {
   min-height: 30px;
   height: 40px;
   min-width: 125px;
-  /* background-color: #268CFF; */
   background-color: #E5E4E3;
-  /* border: 1px solid transparent; */
   border: solid 2px #167CEF;
   border-radius: 45px;
 }
@@ -137,6 +135,19 @@ textarea {
   border: solid 2px #167CCF;
   transition-property: background-color, border;
   transition-duration: .5s, .5s;
+}
+
+.common_button_disabled {
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 1rem;
+  margin: 15px 10px 10px 10px;
+  min-height: 30px;
+  height: 40px;
+  min-width: 125px;
+  background-color: #E5E4E3;
+  border: solid 2px #167CEF;
+  border-radius: 45px;
 }
 
 .common_form .helper_text {
