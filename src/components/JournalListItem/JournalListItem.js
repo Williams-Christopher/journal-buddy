@@ -26,7 +26,7 @@ class JournalListItem extends React.Component {
         // const pathString = `/View/${this.props.entry_id}`;
 
         return (
-            <section className='journal_list_item'>
+            <article className='journal_list_item'>
                 <h2>
                     <Link className='common_link' to={this.pathString}>
                         {getShortFormattedEntryTitle(this.props.title)}
@@ -35,9 +35,11 @@ class JournalListItem extends React.Component {
                 <h3>{getStringForUTCDate(this.props.created)}</h3>
                 <p>Feeling: {getStringForFeelingValue(this.props.feeling)}</p>
                 <p>Privacy: {getStringForPrivacyValue(this.props.privacy)}</p>
-                <p>Preview: {getPreviewString(this.props.body, 45)}</p>
-                <button className='common_button' onClick={e => this.handleViewButtonClick(e)}>View Entry</button>
-            </section>
+                <p>Preview: {getPreviewString(this.props.body, 100)}</p>
+                <div className='common_button_container'>
+                    <button className='common_button' onClick={e => this.handleViewButtonClick(e)}>View Entry</button>
+                </div>
+            </article>
         );
     };
 };
