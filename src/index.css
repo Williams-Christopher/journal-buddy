@@ -80,6 +80,8 @@ textarea {
   height: 2.75rem;
   width: 100%;
   outline-color: #4B3F72;
+  border: 1px solid transparent;
+  border-radius: 5px;
 }
 
 .common_form textarea {
@@ -121,6 +123,7 @@ textarea {
   height: 40px;
   min-width: 125px;
   background-color: #268CFF;
+  border: 1px solid transparent;
   border-radius: 45px;
 }
 
