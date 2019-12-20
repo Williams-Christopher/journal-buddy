@@ -106,12 +106,22 @@ textarea {
   vertical-align: middle;
 }
 
+.common_button_container {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+}
+
 .common_button {
-  display: inline-block;
-  margin: 20px auto;
-  height: 30px;
-  min-width: 100px;
-  background-color: lightgreen;
+  margin: 15px 10px 10px 10px;
+  min-height: 30px;
+  height: 40px;
+  min-width: 125px;
+  background-color: #268CFF;
+  border-radius: 45px;
 }
 
 .common_form .helper_text {

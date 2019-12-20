@@ -101,12 +101,14 @@ class CreateEntry extends React.Component {
                     <textarea rows='10' cols='50' id='entry_form_body' ref={this.bodyValue}>
                     </textarea>
 
-                    <button className='common_button' onClick={e => this.handleBackButton(e)}>Back to List</button>
-                    <button className='common_button' type='submit'>Submit Entry</button>
+                    <div className='common_button_container'>
+                        <button className='common_button' onClick={e => this.handleBackButton(e)}>Back to List</button>
+                        <button className='common_button' type='submit'>Submit Entry</button>
+                    </div>
                 </form>
             </section>
         );
     };
 };
 
-export default CreateEntry;
+export default withRouter(CreateEntry);
