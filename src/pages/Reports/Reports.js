@@ -15,7 +15,7 @@ class Reports extends React.Component {
             scales: {
                 yAxes: [{
                     ticks: {
-                        autoSkip: true,
+                        precision: 0,
                     },
                 }],
             },
