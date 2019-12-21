@@ -15,7 +15,7 @@ class Reports extends React.Component {
             scales: {
                 yAxes: [{
                     ticks: {
-                        autoSkip: true,
+                        precision: 0,
                     },
                 }],
             },
@@ -72,7 +72,7 @@ class Reports extends React.Component {
 
     createBarGraph = (key) => {
         return (
-            <div className='metrics-graph'>
+            <div className='metrics_graph'>
                 <Bar data={this.state[key]} options={this.chartOptions} />
             </div>
         )
@@ -100,22 +100,22 @@ class Reports extends React.Component {
 
     showMetrics = () => {
         return (
-            <section className='metrics-containter'>
-                <section className='metrics-tiles-container'>
-                    <div className='metrics-tile'>
-                        <p>Total Entries</p>
-                        <p>{this.state.data.total_entries}</p>
+            <section className='metrics_containter'>
+                <section className='metrics_tiles_container'>
+                    <div className='metrics_tile'>
+                        <p className='metrics_tile_title'>Total Entries</p>
+                        <p className='metrics_tile_value'>{this.state.data.total_entries}</p>
                     </div>
-                    <div className='metrics-tile'>
-                        <p>Private Entries</p>
-                        <p>{this.state.data.private_entries}</p>
+                    <div className='metrics_tile'>
+                        <p className='metrics_tile_title'>Private Entries</p>
+                        <p className='metrics_tile_value'>{this.state.data.private_entries}</p>
                     </div>
-                    <div className='metrics-tile'>
-                        <p>Public Entries</p>
-                        <p>{this.state.data.public_entries}</p>
+                    <div className='metrics_tile'>
+                        <p className='metrics_tile_title'>Public Entries</p>
+                        <p className='metrics_tile_value'>{this.state.data.public_entries}</p>
                     </div>
                 </section>
-                <section className='metrics-graphs-container'>
+                <section className='metrics_graphs_container'>
                     {this.graphDataKeys.map(key => this.createBarGraph(key))}
                 </section>
             </section>

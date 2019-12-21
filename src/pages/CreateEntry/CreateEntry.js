@@ -74,14 +74,25 @@ class CreateEntry extends React.Component {
                 </h2>
                 {this.state.error && <p className='common_error'>{this.state.error}</p>}
                 <form className='entry_form common_form' onSubmit={this.handleSubmit}>
-                    <label htmlFor='entry_form_emotion_option'>I'm feeling:</label>
-                    <select name='entry_emotion_option' id='entry_form_emotion_option' ref={this.feelingValue}>
-                        <option value='5'>5 - Very happy</option>
-                        <option value='4'>4 - Happy</option>
-                        <option value='3'>3 - Normal / Even</option>
-                        <option value='2'>2 - Down</option>
-                        <option value='1'>1 - Very down</option>
-                    </select>
+                    <div className='select_flex_group'>
+                        <div className={'select_set'}>
+                            <label htmlFor='entry_form_emotion_option'>I'm feeling:</label>
+                            <select name='entry_emotion_option' id='entry_form_emotion_option' ref={this.feelingValue}>
+                                <option value='5'>5 - Very happy</option>
+                                <option value='4'>4 - Happy</option>
+                                <option value='3'>3 - Normal / Even</option>
+                                <option value='2'>2 - Down</option>
+                                <option value='1'>1 - Very down</option>
+                            </select>
+                        </div>
+                        <div className={'select_set'}>
+                            <label htmlFor='entry_form_privacy'>Privacy:</label>
+                            <select name='entry_form_privacy' id='entry_form_privacy' ref={this.privacyValue} onChange={(event) => this.handlePrivacyOptionChange(event)}>
+                                <option value='0'>Private</option>
+                                <option value='1'>Public</option>
+                            </select>
+                        </div>
+                    </div>
 
                     <label htmlFor='entry_form_title'>Entry title (optional):</label>
                     <input type='text' name='entry_form_title' id='entry_form_title' ref={this.titleValue} placeholder='Untitled Entry' />
@@ -90,17 +101,14 @@ class CreateEntry extends React.Component {
                     <textarea rows='10' cols='50' id='entry_form_body' ref={this.bodyValue}>
                     </textarea>
 
-                    <label htmlFor='entry_form_privacy'>Privacy:</label>
-                    <select name='entry_form_privacy' id='entry_form_privacy' ref={this.privacyValue} onChange={(event) => this.handlePrivacyOptionChange(event)}>
-                        <option value='0'>Private</option>
-                        <option value='1'>Public</option>
-                    </select>
-                    <button className='common_button' onClick={e => this.handleBackButton(e)}>Back to List</button>
-                    <button className='common_button' type='submit'>Submit Entry</button>
+                    <div className='common_button_container'>
+                        <button className='common_button' onClick={e => this.handleBackButton(e)}>Back to List</button>
+                        <button className='common_button' type='submit'>Submit Entry</button>
+                    </div>
                 </form>
             </section>
         );
     };
 };
 
-export default CreateEntry;
+export default withRouter(CreateEntry);

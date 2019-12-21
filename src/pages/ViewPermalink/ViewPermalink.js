@@ -29,7 +29,7 @@ class ViewPermalink extends React.Component {
         return (
             <section className='view_entry'>
                 <h2>
-                    View Shared Journal Entry by {this.state.entry.user}
+                    Viewing a shared journal entry by {this.state.entry.user}
                 </h2>
                 <p className='view_entry_date'>
                     { getLongFormattedEntryTitle(this.state.entry.title, this.state.entry.created) }

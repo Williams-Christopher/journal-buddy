@@ -1,0 +1,33 @@
+.metrics_tiles_container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.metrics_tile {
+    min-width: 170px;
+    min-height: 170px;
+    padding: 2%;
+    margin: 5%;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 3px 2px 19px #50514f;
+}
+
+.metrics_tile_title {
+    font-weight: bold;
+    text-align: center;
+}
+
+.metrics_tile_value {
+    text-align: center;
+    vertical-align: middle;
+}
+
+.metrics_graph {
+    margin: 20px 0 20px 0;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 3px 2px 19px #50514f;
+}

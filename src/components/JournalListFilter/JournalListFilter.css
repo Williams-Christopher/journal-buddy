@@ -1,9 +1,21 @@
-.journal_entry_filter {
+.journal_entry_filter_group {
     display: flex;
     flex-direction: column;
+    width: 100%;
+    margin-bottom: 5%;
 }
 
-.journal_entry_filter fieldset {
-    border: none;
-    text-align: center;
+.select_set {
+    padding: 0 2% 0 0;
+    width: 100%;
+}
+
+.select_set select {
+    background-color: white;
+}
+
+@media screen and (min-width: 500px) {
+    .journal_entry_filter_group {
+        flex-direction: row;
+    }
 }

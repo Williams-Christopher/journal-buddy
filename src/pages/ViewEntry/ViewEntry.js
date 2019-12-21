@@ -2,7 +2,7 @@ import React from 'react';
 import {withRouter} from 'react-router-dom';
 
 import ApiServices from '../../services/api-services';
-import { getLongFormattedEntryTitle, getStringForFeelingValue, getStringForPrivacyValue } from '../../helpers/Helpers';
+import { getLongFormattedEntryTitle, getStringForFeelingValue, getStringForPrivacyValue, getStringForUTCDate } from '../../helpers/Helpers';
 import './ViewEntry.css';
 
 class ViewEntry extends React.Component {
@@ -40,22 +40,33 @@ class ViewEntry extends React.Component {
 
     entryFound() {
         return (
-            <section className='view_entry'>
+            <article className='view_entry'>
                 <h2>
                     View Journal Entry
                 </h2>
-                <button className='common_button' disabled={this.state.entry.privacy === 0 ? true : false} onClick={() => this.handleCopyButton()}>Copy permalink</button>
-                <button className='common_button' onClick={() => this.handleBackButton()}>Back to list</button>
+                <div className='common_button_container'>
+                    {this.state.entry.privacy === 0 ?
+                        <button className='common_button_disabled' disabled={true}>Permalink unavailble</button>
+                        :
+                        <button className='common_button' onClick={() => this.handleCopyButton()}>Copy permalink to entry</button>
+                    }
+                    <button className='common_button' onClick={() => this.handleBackButton()}>Back to list</button>
+                </div>
+                <h2>{this.state.entry.title}</h2>
                 <p className='view_entry_date'>
-                    { getLongFormattedEntryTitle(this.state.entry.title, this.state.entry.created) }
+                    Date: {getStringForUTCDate(this.state.entry.created)}
+                    {/* { getLongFormattedEntryTitle(this.state.entry.title, this.state.entry.created) } */}
                 </p>
                 <p className='view_entry_feeling'>
-                    I was feeling: { getStringForFeelingValue(this.state.entry.feeling) } - Privacy: { getStringForPrivacyValue(this.state.entry.privacy) }
+                    Feeling: { getStringForFeelingValue(this.state.entry.feeling) }
                 </p>
-                <article className='view_entry_body'>
+                <p>
+                    Privacy: { getStringForPrivacyValue(this.state.entry.privacy) }
+                </p>
+                <p className='view_entry_body'>
                     { this.state.entry.body }
-                </article>
-            </section>
+                </p>
+            </article>
         );
     };
 
