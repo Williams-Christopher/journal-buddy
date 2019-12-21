@@ -69,9 +69,6 @@ section {
   width: 100%;
 }
 
-/* .common_form input,
-.common_form select,
-.common_form textarea { */
 input,
 select,
 textarea {
@@ -82,6 +79,10 @@ textarea {
   outline-color: #4B3F72;
   border: 1px solid transparent;
   border-radius: 5px;
+}
+
+textarea {
+  resize: none;
 }
 
 .common_form textarea {

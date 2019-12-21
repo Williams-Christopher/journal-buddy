@@ -10,7 +10,10 @@ import './Login.css';
 class Login extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {error: null};
+        this.state = {
+            error: null,
+            requestActive: false,
+        };
         this.login_user = React.createRef();
         this.login_password = React.createRef();
     };
@@ -24,8 +27,11 @@ class Login extends React.Component {
 
     handleLoginRequest = event => {
         event.preventDefault();
-        this.setState({error: null});
- 
+        this.setState({
+            error: null,
+            requestActive: true,
+        });
+
         const loginUser = {
             user_name: this.login_user.current.value,
             password: this.login_password.current.value,
@@ -40,7 +46,10 @@ class Login extends React.Component {
                 this.redirectOnLoginSuccess();
             })
             .catch(error => {
-                this.setState({error: true})
+                this.setState({
+                    error: true,
+                    requestActive: false,
+                })
             });
     };
 
@@ -58,7 +67,12 @@ class Login extends React.Component {
 
                     <label htmlFor='login_password'>Password </label>
                     <input type='password' name='login_password' id='login_password' ref={this.login_password} required />
-                    <button className='common_button' type='submit'>Login</button>
+                    {this.state.requestActive ?
+                        <div className='login_spinner'></div>
+                        :
+                        <button className='common_button' type='submit'>Login</button>
+                    }
+
                 </form>
                 <p>For a demonstration, use pstickings0 with password01</p>
             </section>

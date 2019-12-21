@@ -7,7 +7,25 @@
 }
 
 .top_nav_title {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: baseline;
     margin: 0;
+}
+
+/* .top_nav_title h1 {
+    display: inline;
+} */
+
+.top_nav_burger {
+    cursor: pointer;
+    padding: 3px;
+    border-radius: 5px;
+}
+
+.top_nav_burger:hover {
+    background-color: rgba(255, 255, 255, .7);
 }
 
 /* See index.css for generic link rules */
@@ -23,9 +41,10 @@
 
 .top_nav_item {
     display: inline-block;
+    line-height: 1.75;
 }
 
-@media screen and (min-width: 500px) {
+@media screen and (min-width: 750px) {
     .top_nav_links {
         flex-direction: row;
         align-items: flex-start;
@@ -34,5 +53,10 @@
 
     .top_nav_item {
         margin: 0 20px;
+    }
+
+    .top_nav_burger {
+        display: none;
+        transition: display .5s;
     }
 }

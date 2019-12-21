@@ -4,6 +4,7 @@ import {withRouter} from 'react-router-dom';
 import ApiServices from '../../services/api-services';
 
 import './CreateEntry.css';
+import { faHourglassEnd } from '@fortawesome/free-solid-svg-icons';
 
 class CreateEntry extends React.Component {
     constructor(props) {
@@ -15,6 +16,7 @@ class CreateEntry extends React.Component {
 
         this.state = {
             error: null,
+            requestActive: false,
             displayedPrivacyNotice: false,
             entry: {
                 feeling: null,
@@ -27,7 +29,11 @@ class CreateEntry extends React.Component {
 
     handleSubmit = (e) => {
         e.preventDefault();
-        this.setState({error: null});
+        this.setState({
+            error: null,
+            requestActive: true,
+        });
+
         if(!this.bodyValue.current.value) {
             this.setState({error: 'Your journal entry can not be empty.'});
             return;
@@ -47,7 +53,10 @@ class CreateEntry extends React.Component {
                 }
                 this.redirectOnSubmitSuccess();
             })
-            .catch(error => this.setState({error: error.message}));
+            .catch(error => this.setState({
+                error: error.message,
+                requestActive: false,
+            }));
     };
 
     redirectOnSubmitSuccess = () => {
@@ -103,7 +112,11 @@ class CreateEntry extends React.Component {
 
                     <div className='common_button_container'>
                         <button className='common_button' onClick={e => this.handleBackButton(e)}>Back to List</button>
-                        <button className='common_button' type='submit'>Submit Entry</button>
+                        { this.state.requestActive ?
+                            <div className='login_spinner'></div>
+                            :
+                            <button className='common_button' type='submit'>Submit Entry</button>
+                        }
                     </div>
                 </form>
             </section>
