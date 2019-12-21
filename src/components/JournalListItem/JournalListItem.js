@@ -22,8 +22,6 @@ class JournalListItem extends React.Component {
     };
 
     render() {
-        // const pathString = `/View/${this.props.entry_id}`;
-
         return (
             <article className='journal_list_item'>
                 <h2>
