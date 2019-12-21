@@ -4,7 +4,6 @@ import {withRouter} from 'react-router-dom';
 import ApiServices from '../../services/api-services';
 
 import './CreateEntry.css';
-import { faHourglassEnd } from '@fortawesome/free-solid-svg-icons';
 
 class CreateEntry extends React.Component {
     constructor(props) {

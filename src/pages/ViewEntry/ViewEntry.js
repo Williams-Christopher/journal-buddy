@@ -2,7 +2,7 @@ import React from 'react';
 import {withRouter} from 'react-router-dom';
 
 import ApiServices from '../../services/api-services';
-import { getLongFormattedEntryTitle, getStringForFeelingValue, getStringForPrivacyValue, getStringForUTCDate } from '../../helpers/Helpers';
+import { getStringForFeelingValue, getStringForPrivacyValue, getStringForUTCDate } from '../../helpers/Helpers';
 import './ViewEntry.css';
 
 class ViewEntry extends React.Component {
