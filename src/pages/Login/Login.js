@@ -72,7 +72,6 @@ class Login extends React.Component {
                         :
                         <button className='common_button' type='submit'>Login</button>
                     }
-
                 </form>
                 <p>For a demonstration, use pstickings0 with password01</p>
             </section>

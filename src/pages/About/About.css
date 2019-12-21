@@ -15,7 +15,13 @@
 }
 
 .about_image {
-
+    margin: 20px;
+    max-width: 60%;
 }
 
 /* Media query at 700px to set flex-direction: row; ? */
+@media screen and (min-width: 350px) {
+    .about_image {
+        max-width: 90%;
+    }
+}
