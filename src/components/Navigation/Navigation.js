@@ -12,13 +12,14 @@ class Navigation extends React.Component {
         super(props);
         this.state = {
             menuDisplayed: true,
-            menuOpen: false,
+            menuOpen: true,
         };
     };
 
     static contextType = AppContext;
 
     componentDidMount() {
+        console.log('ComponentDidMount', this.state.menuOpen);
         this.handleDimensionChange();
         window.addEventListener('resize', this.handleDimensionChange);
     };
@@ -28,10 +29,17 @@ class Navigation extends React.Component {
     };
 
     handleDimensionChange = () => {
+        console.log('Dimension CHange: ', window.innerWidth);
         if(window.innerWidth >= 750) {
-            this.setState({menuOpen: true});
+            this.setState({
+                menuOpen: true,
+                menuDisplayed: true,
+            });
         } else {
-            this.setState({menuOpen: false});
+            this.setState({
+                menuOpen: false,
+                menuDisplayed: false,
+            });
         };
     };
 
@@ -42,7 +50,9 @@ class Navigation extends React.Component {
     };
 
     handleMenuToggle = () => {
-        this.setState({ menuOpen: !this.state.menuOpen });
+        if(!this.state.menuDisplayed) {
+            this.setState({ menuOpen: !this.state.menuOpen });
+        };
     };
 
     render() {
