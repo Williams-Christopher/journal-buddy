@@ -1,9 +1,9 @@
 function getLongFormattedEntryTitle(title, date) {
-    let newTitle = title || 'Untitled Entry';
+    let newTitle = title || `"Untitled Entry"`;
     let newDate = new Date(date);
     let properDate = newDate.toDateString();
     
-    return `${newTitle} on ${properDate}`
+    return `"${newTitle}" on ${properDate}`
 };
 
 function getShortFormattedEntryTitle(title) {
