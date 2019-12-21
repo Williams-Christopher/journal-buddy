@@ -1,14 +1,31 @@
 .metrics_tiles_container {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
     flex-direction: row;
+    -ms-flex-wrap: wrap;
     flex-wrap: wrap;
+    -webkit-box-pack: space-evenly;
+    -ms-flex-pack: space-evenly;
     justify-content: space-evenly;
 }
 
 .metrics_tile {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
     min-width: 140px;
     min-height: 140px;
@@ -16,6 +33,7 @@
     margin: 5%;
     background-color: white;
     border-radius: 10px;
+    -webkit-box-shadow: 3px 2px 19px #50514f;
     box-shadow: 3px 2px 19px #50514f;
 }
 
@@ -33,5 +51,6 @@
     margin: 20px 0 20px 0;
     background-color: white;
     border-radius: 10px;
+    -webkit-box-shadow: 3px 2px 19px #50514f;
     box-shadow: 3px 2px 19px #50514f;
 }

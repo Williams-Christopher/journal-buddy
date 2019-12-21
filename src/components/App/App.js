@@ -48,7 +48,7 @@ class App extends React.Component {
               {/* Paging Dr. DRY: Surely I can turn these conditional renders into a function/component through which the spice can flow*/}
               <Route path='/MyEntries' render={componentProps => TokenServices.hasToken() ? <JournalEntryList /> : <Redirect to='/Login' />} />
               <Route path='/Create' render={componentProps => TokenServices.hasToken() ? <CreateEntry /> : <Redirect to='/Login' />} />
-              <Route path='/View/:entry_id' render={({match}, componentProps) => TokenServices.hasToken() ? <ViewEntry match={match} /> : <Redirect to='/Login' />} />
+              <Route path='/View/:entry_id' render={({ match }, componentProps) => TokenServices.hasToken() ? <ViewEntry match={match} /> : <Redirect to='/Login' />} />
               <Route path='/Metrics' render={componentProps => TokenServices.hasToken() ? <Reports /> : <Redirect to='/Login' />} />
               <Route path='/Register' render={componentProps => TokenServices.hasToken() ? <Redirect to='/MyEntries' /> : <Register />} />
               <Route path='/Login' render={componentProps => TokenServices.hasToken() ? <Redirect to='/MyEntries' /> : <Login />} />

@@ -1,4 +1,7 @@
+/* prefixed by https://autoprefixer.github.io (PostCSS: v7.0.23, autoprefixer: v9.7.3) */
+
 * {
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 
@@ -19,8 +22,15 @@ main {
 
 #root {
   min-height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
   justify-content: space-between;
   background-color: #F5F4F3;
 }
@@ -57,10 +67,20 @@ section {
 
 .common_form {
   margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
+  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
+  -webkit-box-align: baseline;
+  -ms-flex-align: baseline;
   align-items: baseline;
   width: 90%;
 }
@@ -111,10 +131,19 @@ textarea {
 
 .common_button_container {
   width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
   flex-direction: row;
+  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
+  -ms-flex-line-pack: center;
   align-content: center;
 }
 
@@ -134,7 +163,11 @@ textarea {
 .common_button:hover {
   background-color: #369CFF;
   border: solid 2px #167CCF;
+  -webkit-transition-property: background-color, border;
+  -o-transition-property: background-color, border;
   transition-property: background-color, border;
+  -webkit-transition-duration: .5s, .5s;
+  -o-transition-duration: .5s, .5s;
   transition-duration: .5s, .5s;
 }
 
@@ -178,7 +211,7 @@ textarea {
   height: 50px;
   margin: 0 auto;
   -webkit-animation: spin 1s linear infinite;
-          animation: spin 1s linear infinite;
+  animation: spin 1s linear infinite;
 }
 
 @-webkit-keyframes spin {

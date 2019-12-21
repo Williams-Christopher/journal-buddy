@@ -55,7 +55,6 @@ class ViewEntry extends React.Component {
                 <h2>{this.state.entry.title}</h2>
                 <p className='view_entry_date'>
                     Date: {getStringForUTCDate(this.state.entry.created)}
-                    {/* { getLongFormattedEntryTitle(this.state.entry.title, this.state.entry.created) } */}
                 </p>
                 <p className='view_entry_feeling'>
                     Feeling: { getStringForFeelingValue(this.state.entry.feeling) }

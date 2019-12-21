@@ -5,7 +5,6 @@ import {library} from '@fortawesome/fontawesome-svg-core';
 import {faBars, faBook} from '@fortawesome/free-solid-svg-icons';
 
 import App from './components/App/App';
-import testData from './test_data';
 import './index.css';
 
 library.add(
@@ -15,7 +14,7 @@ library.add(
 
 ReactDOM.render(
     <BrowserRouter>
-        <App entries={testData.entries} users={testData.users} />
+        <App />
     </BrowserRouter>,
     document.getElementById('root')
 );

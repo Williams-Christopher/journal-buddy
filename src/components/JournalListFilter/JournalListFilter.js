@@ -22,8 +22,6 @@ class JournalListFilter extends React.Component {
                     <select name='list_sort' id='list_sort' onChange={(event) => this.handleSortChange(event)}>
                         <option value='datedesc' defaultValue>Date - Recent first</option>
                         <option value='dateasc'>Date - Oldest first</option>
-                        {/* <option value='feelasc'>Feeling - Ascending</option>
-                        <option value='feeldesc'>Feeling - Descending</option> */}
                     </select>
                 </div>
                 <div className={'select_set'}>

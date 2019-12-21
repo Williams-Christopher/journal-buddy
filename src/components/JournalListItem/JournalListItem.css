@@ -1,5 +1,6 @@
 .journal_list_item {
     margin-bottom: 2.5rem;
+    -webkit-box-shadow: 5px 5px 10px #50514F;
     box-shadow: 5px 5px 10px #50514F;
     border-radius: 20px;
     padding: 1rem;

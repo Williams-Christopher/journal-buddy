@@ -107,7 +107,6 @@ class Register extends React.Component {
         return (
             <section className='register'>
                 <h2>Sign up for Journal Buddy</h2>
-                {/* <em>Thanks for signing up for Journal Buddy!</em> */}
                 <form className='common_form register_form' onSubmit={this.handleSubmit}>
                     {this.state.error && <p className='common_error'>{this.state.error}</p>}
 
