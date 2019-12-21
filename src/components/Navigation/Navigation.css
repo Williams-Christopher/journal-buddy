@@ -29,10 +29,6 @@
     margin: 0;
 }
 
-/* .top_nav_title h1 {
-    display: inline;
-} */
-
 .top_nav_burger {
     cursor: pointer;
     padding: 3px;
@@ -62,6 +58,8 @@
 .top_nav_item {
     display: inline-block;
     line-height: 1.75;
+    font-size: 1.5rem;
+    margin-top: 5px;
 }
 
 @media screen and (min-width: 750px) {
