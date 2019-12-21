@@ -10,13 +10,9 @@ Journal Buddy is here to help you meet your journaling needs and goals. Use Jour
 
 ---
 ## Screenshots
-<img src='https://user-images.githubusercontent.com/26190276/71314060-a338c880-2407-11ea-87f9-aeef456c6b18.png' width='250' />
-
-<img src='https://user-images.githubusercontent.com/26190276/71314107-4db0eb80-2408-11ea-95df-18e402742d46.png' width='250' />
-
-<img src='https://user-images.githubusercontent.com/26190276/71314109-5e616180-2408-11ea-9b36-5abdf8027ed6.png' width='250' />
-
-<img src='https://user-images.githubusercontent.com/26190276/71314135-a7191a80-2408-11ea-8fc3-6ca7ab2746a7.png' width='250' />
+Metrics - Laptop | Metrics - Responsive | Menu | View Entry
+-|-|-|-
+<img src='https://user-images.githubusercontent.com/26190276/71314060-a338c880-2407-11ea-87f9-aeef456c6b18.png' width='250' /> | <img src='https://user-images.githubusercontent.com/26190276/71314107-4db0eb80-2408-11ea-95df-18e402742d46.png' width='250' /> | <img src='https://user-images.githubusercontent.com/26190276/71314109-5e616180-2408-11ea-9b36-5abdf8027ed6.png' width='250' /> | <img src='https://user-images.githubusercontent.com/26190276/71314135-a7191a80-2408-11ea-8fc3-6ca7ab2746a7.png' width='250' />
 
 ---
 ### Tech stack
