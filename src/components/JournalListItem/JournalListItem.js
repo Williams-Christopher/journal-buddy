@@ -18,7 +18,6 @@ class JournalListItem extends React.Component {
 
 
     handleViewButtonClick = () => {
-        console.log('Click!');
         this.props.history.push(this.pathString)
     };
 
