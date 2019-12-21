@@ -86,7 +86,7 @@ class CreateEntry extends React.Component {
                     <div className='select_flex_group'>
                         <div className={'select_set'}>
                             <label htmlFor='entry_form_emotion_option'>I'm feeling:</label>
-                            <select name='entry_emotion_option' id='entry_form_emotion_option' ref={this.feelingValue}>
+                            <select name='entry_emotion_option' id='entry_form_emotion_option' ref={this.feelingValue} defaultValue={3}>
                                 <option value='5'>5 - Very happy</option>
                                 <option value='4'>4 - Happy</option>
                                 <option value='3'>3 - Normal / Even</option>
