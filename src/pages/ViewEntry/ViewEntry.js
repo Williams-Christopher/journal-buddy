@@ -48,7 +48,7 @@ class ViewEntry extends React.Component {
                     {this.state.entry.privacy === 0 ?
                         <button className='common_button_disabled' disabled={true}>Permalink unavailble</button>
                         :
-                        <button className='common_button' onClick={() => this.handleCopyButton()}>Copy permalink to entry</button>
+                        <button className='common_button' onClick={() => this.handleCopyButton()}>Copy permalink to clipboard</button>
                     }
                     <button className='common_button' onClick={() => this.handleBackButton()}>Back to list</button>
                 </div>

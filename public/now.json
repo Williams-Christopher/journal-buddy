@@ -11,6 +11,11 @@
       "dest": "/favicon.ico"
     },
     {
+      "src": "^/og-image.jpg$",
+      "headers": {"content-type": "image/jpeg"},
+      "dest": "/og-image.jpg"
+    },
+    {
       "src": "^/manifest.json$",
       "dest": "/manifest.json"
     },
