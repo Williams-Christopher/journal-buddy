@@ -24,6 +24,8 @@ The client application makes use of:
 * Chart.js
 * @fortawesome
 
+Journal Buddy was started from create-react-app.
+
 ---
 ### Credits
 * Favicon by [Smashicons](https://www.flaticon.com/authors/smashicons) on Flaticon

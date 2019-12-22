@@ -132,7 +132,7 @@ class Register extends React.Component {
 
                     <button className='common_button' type='submit'>Signup</button>
                 </form>
-                <p>Already have an account? <Link className='common_link' to='/Login'>Login</Link></p>
+                {/* <p>Already have an account? <Link className='common_link' to='/Login'>Login</Link></p> */}
             </section>
         );
     };
