@@ -19,7 +19,6 @@ class Navigation extends React.Component {
     static contextType = AppContext;
 
     componentDidMount() {
-        console.log('ComponentDidMount', this.state.menuOpen);
         this.handleDimensionChange();
         window.addEventListener('resize', this.handleDimensionChange);
     };
@@ -29,7 +28,6 @@ class Navigation extends React.Component {
     };
 
     handleDimensionChange = () => {
-        console.log('Dimension CHange: ', window.innerWidth);
         if(window.innerWidth >= 750) {
             this.setState({
                 menuOpen: true,
